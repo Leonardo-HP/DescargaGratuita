@@ -1,25 +1,12 @@
-
-import {
-	useVideoConfig,
-	Sequence,
-	Composition,
-	AbsoluteFill,
-	staticFile,
-	Audio,
-	Video,
-	interpolate,
-	OffthreadVideo,
-	Img,
-	useCurrentFrame,
-	Easing,
-} from 'remotion/.';
+import {Sequence} from 'remotion/.';
 
 import {CaidaDeCortinilla} from './CaidaDeCortinilla';
-import {CuentaGratis, Rojo, RojoBF, TextoBXF} from './Colors';
+import {CuentaGratis, Ovalo, Rojo, RojoBF, TextoBXF} from './Colors';
 import {Gris} from './Colors';
 import {Azul} from './Colors';
 import {Blanco} from './Colors';
 import {CaidaSpring} from './CaidaSpring';
+import {CaidaOvalo} from './CaidaOvalo';
 
 export const CortinillaSalida = () => {
 	return (
@@ -54,11 +41,19 @@ export const CortinillaSalida = () => {
 					<RojoBF />
 				</CaidaSpring>
 			</Sequence>
+
+			<Sequence from={70}>
+				<CaidaOvalo>
+					<Ovalo />
+				</CaidaOvalo>
+			</Sequence>
+
 			<Sequence from={75}>
 				<CaidaSpring>
 					<TextoBXF />
 				</CaidaSpring>
 			</Sequence>
+
 			<Sequence from={75}>
 				<CaidaSpring>
 					<CuentaGratis />

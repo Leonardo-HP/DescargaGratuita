@@ -52,27 +52,36 @@ export const Rojo = () => {
 
 export const RojoBF = () => {
 	return (
-		<div
-			style={{
-				transform: `translate(-120px,-200px)`,
-				width: '1555px',
-				height: '720px',
-				background: `
-#ce1d2c`,
-			}}
-		>
+		<div>
 			<div
 				style={{
-					width: '1730px',
-					height: '300px',
-					translate: `-95px 650px`,
-					background: `white`,
-					borderRadius: `100% `,
+					transform: `translate(-120px,-200px)`,
+					width: '1580px',
+					height: '720px',
+					background: `
+#ce1d2c`,
 				}}
 			/>
 		</div>
 	);
 };
+
+export const Ovalo = () => {
+	return (
+		<div
+			style={{
+				overflow: `visible`,
+				width: '1500px',
+				height: '200px',
+				transform: `translate(-120px,450px)`,
+				background: `white`,
+				borderRadius: `50% 50% 0%  0%  `,
+				position: 'absolute',
+			}}
+		/>
+	);
+};
+
 export const TextoBXF: React.FC = () => {
 	const frame = useCurrentFrame();
 	const opacidad = interpolate(frame, [0, 40], [0, 1], {

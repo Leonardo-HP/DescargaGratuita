@@ -1,8 +1,8 @@
 import {AbsoluteFill, Sequence} from 'remotion';
 
 import {CheckMark} from './CheckMark/CheckMark';
-import {CortinillaSalida} from './Cortinilla/CortinillaSalida';
-import { CortinillaEntrada } from './Cortinilla/CortinillaEntrada';
+import {CortinillaSalida} from './Cortinillas/CortinillaSalida';
+import { CortinillaEntrada } from './Cortinillas/CortinillaEntrada';
 
 export const MyComposition = () => {
 	return (
@@ -26,6 +26,10 @@ export const MyComposition = () => {
 					<CortinillaSalida />
 				</AbsoluteFill>
 			</Sequence>
+
+
+
+
 
 		</div>
 	);

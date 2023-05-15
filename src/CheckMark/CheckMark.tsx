@@ -24,7 +24,6 @@ import { MedioCirculo3 } from './MedioCirculos';
 import { MedioCirculo4 } from './MedioCirculos';
 import { Check } from './Check';
 import { CheckMarkScale } from './CheckMarkScale';
-import { Marcador } from './Marcador';
 import { Marcadores } from './Marcadores';
 import { CheckStaging } from './CheckStaging';
 

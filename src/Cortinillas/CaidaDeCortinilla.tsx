@@ -1,18 +1,7 @@
-import {Component} from 'react';
 import {
-	useVideoConfig,
-	Sequence,
-	Composition,
-	AbsoluteFill,
-	staticFile,
-	Audio,
-	Video,
 	interpolate,
-	OffthreadVideo,
-	Img,
 	useCurrentFrame,
 	Easing,
-	spring,
 } from 'remotion/.';
 
 export const CaidaDeCortinilla: React.FC<{
@@ -34,5 +23,3 @@ export const CaidaDeCortinilla: React.FC<{
 		</div>
 	);
 };
-
-
