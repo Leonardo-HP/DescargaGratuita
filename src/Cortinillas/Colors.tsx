@@ -44,7 +44,7 @@ export const Rojo = () => {
 				width: '1500px',
 				height: '720px',
 				background: `
-#c21d1d`,
+				#ce1d2c`,
 			}}
 		/>
 	);

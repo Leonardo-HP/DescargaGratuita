@@ -1,28 +1,12 @@
-import {Component} from 'react';
-import {
-	useVideoConfig,
-	Sequence,
-	Composition,
-	AbsoluteFill,
-	staticFile,
-	Audio,
-	Video,
-	interpolate,
-	OffthreadVideo,
-	Img,
-	useCurrentFrame,
-	Easing,
-} from 'remotion/.';
+import {AbsoluteFill} from 'remotion/.';
 
 export const Check = () => {
-
-
 	return (
 		<AbsoluteFill
 			style={{
 				justifyContent: 'center',
 				alignItems: 'center',
-        transform: 'rotate(40deg) translate(-2px, -2px )'
+				transform: 'rotate(40deg) translate(-2px, -2px )',
 			}}
 		>
 			<div
@@ -30,16 +14,17 @@ export const Check = () => {
 					transform: ` translate(6px, -1px )`,
 					width: '5px',
 					height: '30px',
-					background:`blue`,
+					background: `blue`,
 					borderRadius: `50px`,
 				}}
 			/>
-      <div
-				style={{position:`absolute`,
+			<div
+				style={{
+					position: `absolute`,
 					transform: `rotate(-80deg) translate(-11px, 1px )`,
 					width: '5px',
 					height: '18px',
-					background:`blue`,
+					background: `blue`,
 					borderRadius: `50px`,
 				}}
 			/>

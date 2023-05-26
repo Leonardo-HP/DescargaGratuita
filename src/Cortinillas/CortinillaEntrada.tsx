@@ -5,7 +5,7 @@ export const CortinillaEntrada = () => {
 	return (
 		<div>
 			<Apertura>
-				<RojoBF2 />
+				<RojoBF2/>
 			</Apertura>
 		</div>
 	);
