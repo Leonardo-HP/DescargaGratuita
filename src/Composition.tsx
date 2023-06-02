@@ -4,7 +4,7 @@ import {CheckMark} from './CheckMark/CheckMark';
 import {CortinillaSalida} from './Cortinillas/CortinillaSalida';
 import {CortinillaEntrada} from './Cortinillas/CortinillaEntrada';
 import {Caja} from './highlight.tsx/Caja';
-import {StagingCaja} from './highlight.tsx/StagingCaja';
+import {MarcaTexto} from './highlight.tsx/MarcaTexto';
 
 export const MyComposition = () => {
 	return (
@@ -27,13 +27,18 @@ export const MyComposition = () => {
 				</AbsoluteFill>
 			</Sequence>
 
-			<Caja
-				Height={50}
-				Widht={50}
-				positionX={50}
-				positionY={50}
-				duracionCaja={100}
-			/>
+			<Sequence>
+				<AbsoluteFill>
+					<Caja
+						Height={60}
+						Width={80}
+						positionX={50}
+						positionY={50}
+						duracionCaja={50}
+					/>
+				</AbsoluteFill>
+			</Sequence>
+
 		</div>
 	);
 };

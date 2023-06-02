@@ -17,9 +17,6 @@ export const CaidaOvalo: React.FC<{
 	return (
 		<div
 			style={{
-				justifyContent: 'center',
-				alignItems: 'center',
-				overflow: `visible`,
 				position: 'absolute',
 				transform: `rotate(${gira}deg) `,
 				transformOrigin: `bottom left`,

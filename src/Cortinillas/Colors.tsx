@@ -7,7 +7,7 @@ export const Azul = () => {
 			style={{
 				width: '1500px',
 				height: '720px',
-				background: `#6089e4`,
+				background: '#6089e4',
 			}}
 		/>
 	);
@@ -19,7 +19,7 @@ export const Blanco = () => {
 			style={{
 				width: '1500px',
 				height: '720px',
-				background: `white`,
+				background: 'white',
 			}}
 		/>
 	);
@@ -31,7 +31,7 @@ export const Gris = () => {
 			style={{
 				width: '1500px',
 				height: '720px',
-				background: `black`,
+				background: 'black',
 			}}
 		/>
 	);
@@ -43,8 +43,7 @@ export const Rojo = () => {
 			style={{
 				width: '1500px',
 				height: '720px',
-				background: `
-				#ce1d2c`,
+				background: '#ce1d2c',
 			}}
 		/>
 	);
@@ -58,8 +57,7 @@ export const RojoBF = () => {
 					transform: `translate(-120px,-200px)`,
 					width: '1580px',
 					height: '720px',
-					background: `
-#ce1d2c`,
+					background: '#ce1d2c',
 				}}
 			/>
 		</div>
@@ -70,13 +68,11 @@ export const Ovalo = () => {
 	return (
 		<div
 			style={{
-				overflow: `visible`,
 				width: '1500px',
 				height: '200px',
-				transform: `translate(-120px,450px)`,
-				background: `white`,
-				borderRadius: `50% 50% 0%  0%  `,
-				position: 'absolute',
+				transform: 'translate(-120px,450px)',
+				background: 'white',
+				borderRadius: '50% 50% 0%  0%',
 			}}
 		/>
 	);
