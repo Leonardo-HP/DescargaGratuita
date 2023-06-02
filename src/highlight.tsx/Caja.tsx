@@ -1,4 +1,4 @@
-import {AbsoluteFill, Sequence, interpolate, useCurrentFrame} from 'remotion';
+import { interpolate, useCurrentFrame} from 'remotion';
 
 export const Caja: React.FC<{
 	Height: number;
@@ -6,28 +6,22 @@ export const Caja: React.FC<{
 	positionX: number;
 	positionY: number;
 	duracionCaja: number;
-}> = ({Height, Width, positionX, positionY, duracionCaja}) => {
+	anchoDeLinea: number;
+
+}> = ({Height, Width, positionX, positionY, duracionCaja, anchoDeLinea}) => {
 	const frame = useCurrentFrame();
 	const altura = Height;
 	const ancho = Width;
 	const X = positionX;
 	const Y = positionY;
 	const duracion = duracionCaja / 4;
+	const linea = anchoDeLinea;
 
-	/* Compensacion */
-
-
-
-
-
-	
-
-	
-	const cierre2 = interpolate(frame,[duracion * 3, duracion * 4],[0, 100],{extrapolateRight: 'clamp'});
-	const cierre3 = interpolate(frame,[duracion * 3, duracion * 4],[0, altura],{extrapolateRight: 'clamp'});
-	const cierre4 = interpolate(frame,[duracion * 3, duracion * 4],[0, altura],{extrapolateRight: 'clamp'});
-
-
+	/* Tiempos */
+	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {extrapolateRight: 'clamp',});
+	const cierreDerecha = interpolate(frame, [duracion, duracion * 2], [100, 0], {extrapolateRight: 'clamp',});
+	const cierreAbajo = interpolate(frame,[duracion * 2, duracion * 3],[100, 0],{extrapolateRight: 'clamp'}	);
+	const cierreIzquierda = interpolate(frame,[duracion * 3, duracion * 4],[100, 0],{extrapolateRight: 'clamp'}	);
 
 	return (
 		<div
@@ -35,56 +29,49 @@ export const Caja: React.FC<{
 				transform: `translateX(${X}px)  translateY(${Y}px)`,
 			}}
 		>
+			<div
+				style={{
+					transform: `rotate(0deg)`,
+					position: `absolute`,
+					background: `green`,
+					width: `${ancho}px`,
+					height: `${linea}px`,
+					clipPath: `inset(0 ${cierreArriba}% 0 0)`,
+				}}
+			/>
 
-				<div
-					style={{
-						transform: `rotate(0deg)`,
-						position:`absolute`,
-						background: `green`,
-						width: `${ancho}px`,
-						height: `10px`,
-						clipPath: `inset(0  ${cierre2}%  0 0 )`
-					}}
-				/>
+			<div
+				style={{
+					transform: `translateX(${ancho - 10}px)  translateY(${0}px)`,
+					position: `absolute`,
+					background: `	blue`,
+					width: `${linea}px`,
+					height: `${altura}px`,
+					clipPath: `inset(0 0 ${cierreDerecha}% 0)`,
+				}}
+			/>
 
+			<div
+				style={{
+					transform: `translateX(${0}px)  translateY(${altura - 10}px)`,
+					position: `absolute`,
+					background: `yellow`,
+					width: `${ancho}px`,
+					height: `${linea}px`,
+					clipPath: `inset(0 0 0 ${cierreAbajo}%)`,
+				}}
+			/>
 
-<div
-					style={{
-						transform: `translateX(${ancho -10}px)  translateY(${0}px)`,
-						position:`absolute`,
-						background: `	blue`,
-						width: `10px`,
-						height: `${altura}px`,
-						clipPath: `inset(0 0 ${cierre2}% 0 )`
-					}}
-				/>
-
-
-<div
-					style={{				
-						transform: `translateX(${0}px)  translateY(${altura-10}px)`,
-						position:`absolute`,
-						background: `yellow`,
-						width: `${ancho}px`,
-						height: `10px`,
-						clipPath: `inset(  0    0 0 ${cierre2}%)`
-					}}
-				/>
-
-
-
-
-<div
-					style={{
-						transform: `translateX(${0}px)  translateY(${0}px)`,
-						position:`absolute`,
-						background: `red`,
-						width: `10px`,
-						height: `${altura}px`,
-						clipPath: `inset(${cierre2}%  0    0 0 )`
-					}}
-				/>
-	
+			<div
+				style={{
+					transform: `translateX(${0}px)  translateY(${0}px)`,
+					position: `absolute`,
+					background: `red`,
+					width: `${linea}px`,
+					height: `${altura}px`,
+					clipPath: `inset(${cierreIzquierda}% 0 0 0)`,
+				}}
+			/>
 		</div>
 	);
 };
