@@ -4,6 +4,7 @@ import {CortinillaSalida} from './Cortinillas/CortinillaSalida';
 import {CortinillaEntrada} from './Cortinillas/CortinillaEntrada';
 import {Caja} from './highlight.tsx/Caja';
 import { MarcaTexto } from './highlight.tsx/MarcaTexto';
+import { Light } from './highlight.tsx/Light';
 
 export const MyComposition = () => {
 	return (
@@ -29,8 +30,8 @@ export const MyComposition = () => {
 			<Sequence>
 				<AbsoluteFill>
 					<Caja
-						Height={100}
-						Width={100}
+						Height={600}
+						Width={600}
 						positionX={50}
 						positionY={50}
 						duracionCaja={50}
@@ -43,12 +44,29 @@ export const MyComposition = () => {
 			<Sequence>
 				<AbsoluteFill>
 					<MarcaTexto
+						Height={40}
+						Width={200}
+						positionX={300}
+						positionY={300}
+						duracionCaja={50}
+						anchoDeLinea={30}
+						opacidad={0.3}
+					/>
+				</AbsoluteFill>
+			</Sequence>
+
+
+
+			<Sequence>
+				<AbsoluteFill>
+					<Light
 						Height={100}
 						Width={100}
-						positionX={200}
-						positionY={200}
+						positionX={100}
+						positionY={100}
 						duracionCaja={50}
-						anchoDeLinea={10}
+				
+	
 					/>
 				</AbsoluteFill>
 			</Sequence>
