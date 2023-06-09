@@ -8,7 +8,6 @@ export const MarcaTexto: React.FC<{
 	duracionCaja: number;
 	anchoDeLinea: number;
 	opacidad: number;
-
 }> = ({
 	Height,
 	Width,
@@ -17,7 +16,6 @@ export const MarcaTexto: React.FC<{
 	duracionCaja,
 	anchoDeLinea,
 	opacidad,
-
 }) => {
 	const frame = useCurrentFrame();
 	const altura = Height;
@@ -27,7 +25,6 @@ export const MarcaTexto: React.FC<{
 	const duracion = duracionCaja / 4;
 	const linea = anchoDeLinea;
 	const opacity = opacidad;
-
 
 	/* Tiempos */
 	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {
@@ -51,7 +48,6 @@ export const MarcaTexto: React.FC<{
 		<div
 			style={{
 				transform: `translateX(${X}px)  translateY(${Y}px) `,
-				
 			}}
 		>
 			<div

@@ -17,10 +17,24 @@ export const Caja: React.FC<{
 	const linea = anchoDeLinea;
 
 	/* Tiempos */
-	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {extrapolateRight: 'clamp'});
-	const cierreDerecha = interpolate(frame, [duracion, duracion * 2], [100, 0], {extrapolateRight: 'clamp'})
-	const cierreAbajo = interpolate(frame,[duracion * 2, duracion * 3],[100, 0],{extrapolateRight: 'clamp'})
-	const cierreIzquierda = interpolate(frame,[duracion * 3, duracion * 4],[100, 0],{extrapolateRight: 'clamp'})
+	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {
+		extrapolateRight: 'clamp',
+	});
+	const cierreDerecha = interpolate(frame, [duracion, duracion * 2], [100, 0], {
+		extrapolateRight: 'clamp',
+	});
+	const cierreAbajo = interpolate(
+		frame,
+		[duracion * 2, duracion * 3],
+		[100, 0],
+		{extrapolateRight: 'clamp'}
+	);
+	const cierreIzquierda = interpolate(
+		frame,
+		[duracion * 3, duracion * 4],
+		[100, 0],
+		{extrapolateRight: 'clamp'}
+	);
 
 	return (
 		<div
@@ -40,7 +54,9 @@ export const Caja: React.FC<{
 
 			<div
 				style={{
-					transform: `translateX(${ancho - anchoDeLinea}px)  translateY(${0}px)`,
+					transform: `translateX(${
+						ancho - anchoDeLinea
+					}px)  translateY(${0}px)`,
 					position: `absolute`,
 					background: `	blue`,
 					width: `${linea}px`,
@@ -51,7 +67,9 @@ export const Caja: React.FC<{
 
 			<div
 				style={{
-					transform: `translateX(${0}px)  translateY(${altura - anchoDeLinea}px)`,
+					transform: `translateX(${0}px)  translateY(${
+						altura - anchoDeLinea
+					}px)`,
 					position: `absolute`,
 					background: `yellow`,
 					width: `${ancho}px`,
