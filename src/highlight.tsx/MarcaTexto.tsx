@@ -53,7 +53,7 @@ export const MarcaTexto: React.FC<{
 			<div
 				style={{
 					position: `absolute`,
-					background: `green`,
+					background: `yellow`,
 					width: `${ancho}px`,
 					height: `${linea}px`,
 					clipPath: `inset(0 ${cierreArriba}% 0 0)`,
@@ -78,7 +78,7 @@ export const MarcaTexto: React.FC<{
 					transform: `translateX(${(ancho - hipotenusa) / 2}px)  translateY(${
 						altura / 2
 					}px) rotate(${-anguloAGrados}deg)`,
-					background: `orange`,
+					background: `yellow`,
 					width: `${hipotenusa}px`,
 					height: `${linea}px`,
 					clipPath: `inset(0  0 0 ${cierreMedio}%)`,

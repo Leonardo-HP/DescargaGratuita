@@ -17,8 +17,8 @@ export const Caja: React.FC<{
 	const linea = anchoDeLinea;
 
 	/* Tiempos */
-	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {
-		extrapolateRight: 'clamp',
+	const cierreArriba = interpolate(frame, [0, duracion,], [100,0], {
+		extrapolateRight: 'clamp'
 	});
 	const cierreDerecha = interpolate(frame, [duracion, duracion * 2], [100, 0], {
 		extrapolateRight: 'clamp',
@@ -36,16 +36,22 @@ export const Caja: React.FC<{
 		{extrapolateRight: 'clamp'}
 	);
 
+	const opacity= interpolate(frame, [116,125 ], [1, 0], {
+		extrapolateRight: 'clamp',
+})
 	return (
 		<div
 			style={{
+
 				transform: `translateX(${X}px)  translateY(${Y}px)`,
+				opacity,
 			}}
 		>
 			<div
 				style={{
+					
 					position: `absolute`,
-					background: `green`,
+					background: `red`,
 					width: `${ancho}px`,
 					height: `${linea}px`,
 					clipPath: `inset(0 ${cierreArriba}% 0 0)`,
@@ -58,7 +64,7 @@ export const Caja: React.FC<{
 						ancho - anchoDeLinea
 					}px)  translateY(${0}px)`,
 					position: `absolute`,
-					background: `	blue`,
+					background: `	red`,
 					width: `${linea}px`,
 					height: `${altura}px`,
 					clipPath: `inset(0 0 ${cierreDerecha}% 0)`,
@@ -71,7 +77,7 @@ export const Caja: React.FC<{
 						altura - anchoDeLinea
 					}px)`,
 					position: `absolute`,
-					background: `yellow`,
+					background: `red`,
 					width: `${ancho}px`,
 					height: `${linea}px`,
 					clipPath: `inset(0 0 0 ${cierreAbajo}%)`,

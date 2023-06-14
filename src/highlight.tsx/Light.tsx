@@ -47,7 +47,7 @@ export const Light: React.FC<{
 			<div
 				style={{
 					position: `absolute`,
-					background: `white`,
+					background: `red`,
 					width: `${ancho}px`,
 					height: `${altura}px`,
 					clipPath: `polygon(${cierre3}% 0%, ${cierre1}% 0%, ${cierre2}% 100%, ${cierre4}% 100%)`,
