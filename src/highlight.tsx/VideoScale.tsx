@@ -12,23 +12,22 @@ export const VideoScale: React.FC<{
 
 	const frame = useCurrentFrame();
 
-	const escala = interpolate(frame, [75, 90,240,265], [1, 1.8,1.8,1], {
+	const escala = interpolate(frame, [20,25,26,30], [1, 1.1,1.1,1], {
 		easing: Easing.bezier(0.18, 0.8, 0.8, 0.85),
 		extrapolateRight: 'clamp',});
-		const move = interpolate(frame, [75, 90,240,265], [0, 700,700,0], {
-			easing: Easing.bezier(0.18, 0.8, 0.8, 0.85),
-			extrapolateRight: 'clamp',
-	});
 
-	const moveY = interpolate(frame, [75, 90,240,260], [0, 350,350,0], {
-		easing: Easing.bezier(0.18, 0.8, 0.8, 0.85),
-		extrapolateRight: 'clamp',
-});
+		const X = interpolate(frame, [20,25,26,30], [0, -7,-7,0], {
+			easing: Easing.bezier(0.18, 0.8, 0.8, 0.85),
+			extrapolateRight: 'clamp',});
+
+			const Y = interpolate(frame, [20,25,26,30], [0, -10,-10,0], {
+				easing: Easing.bezier(0.18, 0.8, 0.8, 0.85),
+				extrapolateRight: 'clamp',});
 
 	return (
 		<AbsoluteFill
 		style={{
-			transform: `translateX(${move}px) translateY(${moveY}px) scale(${escala})`,
+			transform: `scale(${escala})   translateX(${X}px) translateY(${Y}px) `,
 		}}
 		
 		>	

@@ -132,17 +132,20 @@ export const MyComposition = () => {
 				</AbsoluteFill>
 			</Sequence>
 
-			<Sequence from={150}>
-				<Lupa
-					size={200}
-					positionXE={0}
-					positionYE={0}
-					duracionCaja={100}
-					rotacion={50}
-					direccion="screenShot.png"
-					imagenScale={1}
-				/>
+			<Sequence from={150} durationInFrames={50}>
+				<AbsoluteFill>
+					<Lupa
+						size={160}
+						positionXE={-40}
+						positionYE={200}
+						duracionCaja={100}
+						rotacion={50}
+						direccion="screenShot.png"
+						imagenScale={1}
+					/>
+				</AbsoluteFill>
 			</Sequence>
+
 
 			<Sequence from={1150} durationInFrames={150}>
 				<AbsoluteFill>
@@ -152,4 +155,4 @@ export const MyComposition = () => {
 		</div>
 	);
 };
-40;
+

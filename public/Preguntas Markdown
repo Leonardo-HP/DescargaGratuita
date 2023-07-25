@@ -1,0 +1,94 @@
+ ## ¿Cual es el limite de descarga diaria de SAT?
+
+- Se podrán descargar hasta 2,000 archivos XML por día, el total considerará las descargas realizadas 1 a 1 (https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1579314716416&ssbinary=true)
+-ademas de 1,000,000 de registros por consulta de los metadatos
+
+### ¿Cuales son los metadatos?
+
+	Son los datos representativos de la factura:
+		- El folio fiscal,
+		- RFC y nombre del emisor, 
+		- RFC y nombre del receptor,
+		- Fecha de emisión,
+ 		- Fecha de certificación,
+ 		- PAC que certificó,
+ 		- Total,
+ 		- Efecto del comprobante,
+		- Estado del comprobante, 
+		- Fecha de cancelación cuando aplique.
+		
+Todos estos datos es el estatus actual de la infomacion que tiene el servicio de administracion tributario de nuestras facturas. 	
+		
+
+Sabias que con el servicio premium Box Factura tendras a tu disposicion un monitor de cancelaciones que te permitira tener el control del status de cada una de tus facturas y siendo un servicio automatizado, las cada descarga y actualizacion se hara aunque estés de vacaciones.
+
+---------------------------------------------------------------------------------
+
+##¿Cual es el limite de descarga diaria de SAT?
+
+- Se podrán descargar hasta 2,000 archivos XML por día, el total considerará las descargas realizadas 1 a 1 (https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1579314716416&ssbinary=true)
+-Ademas de 1,000,000 de registros por consulta de los metadatos
+
+### Por que son importantes los metadatos?
+
+	La función principal de esta herramienta radica en facilitar la comparación entre los comprobantes considerados por el portal del SAT y los registrados en contabilidad. En contabilidad, es posible que existan CFDI válidos que aparezcan como cancelados en el portal del SAT, por lo que la metadata que descargamos desde el portal del SAT nos da la informacion completa de el estatus para compararla y validarla con lo la informacion que generamos en la contabilidad de nuestra empresa.  
+			
+-Si no quieres estar limitado, por que prueba nuestra descarga masiva gratis. 
+o mejor aun, descubre como la descarga premium puede monitorear las cancelaciones justo al momento de llegar
+
+---------------------------------------------------------------------------------
+
+**Instruccion con Imagenes**
+
+##¿como descargar facturas de SAT?
+
+1. Ingresaremos al sitio sat.gob.mx con nuestras credenciales(RFC y contraseña) y daremos Click en la pestaña Factura Electronica (img1.png)
+2. Seleccionaremos facturas emitidas o recibidas de las opciones de servicios de Factura (img2.png) 
+3. Establecemos los filtros por los que queremos buscarlas ya sea por el folio fiscal o por rangos de fecha en la emisión, y daremos click en Buscar CFDI (img4.png)
+4. Marcar la casilla para seleccionar cada una o seleccionamos la casilla superior para descargar todas, luego Click en “Descargar Seleccionados”  (img6.png)
+5. Aparecera un banner con el folio de la descarga que nos indicara que la solicitud fue completada (img7.png)
+6. En la esquina superior derecha hay un menu desplegable Consultar CFDI, click en factura electronica, depsues damos click en "recuperar Descargas de CFDI"(img8.png)
+7. Buscamos en la lista el folio que se nos dio, ten en cuenta que puede tardar hasta 48 horas. (img9.png)
+8. Click en "Descargar paquete"
+
+Si quieres evitar el tener que esperar y tener tus facturas listas cuando las necesites descubre la solucion premium de Box Factura tus facturas estaran actualizadas y siempre validadas en tu bobeda digital. 
+
+---------------------------------------------------------------------------------
+
+**Instruccion con GIFS**
+
+##¿como descargar facturas de SAT?
+
+1.Ingresaremos al sitio sat.gob.mx con nuestras credenciales(RFC y contraseña) y daremos Click en la pestaña Factura Electronica 
+2.Seleccionaremos facturas emitidas o recibidas de las opciones de servicios de Factura 
+3.Establecemos los filtros por los que queremos buscarlas ya sea por el folio fiscal o por rangos de fecha en la emisión, y daremos click en Buscar CFDI 
+4.Marcar la casilla para seleccionar cada una o seleccionamos la casilla superior para descargar todas, luego Click en “Descargar Seleccionados”  
+5.Aparecera un banner con el folio de la descarga que nos indicara que la solicitud fue completada 
+6.En la esquina superior derecha hay un menu desplegable Consultar CFDI, click en factura electronica, depsues damos click en "recuperar Descargas de CFDI"
+8.Click en "Descargar paquete"
+
+Si quieres evitar el tener que esperar y tener tus facturas listas cuando las necesites descubre la solucion premium de Box Factura tus facturas estaran actualizadas y siempre validadas en tu bobeda digital. 
+
+---------------------------------------------------------------------------------
+
+ **Instruccion con GIFS Modificado**
+
+##¿como descargar facturas de SAT?
+
+1.Ingresaremos al sitio sat.gob.mx con nuestras credenciales(RFC y contraseña) y daremos Click en la pestaña Factura Electronica 
+2.Seleccionaremos facturas emitidas o recibidas de las opciones de servicios de Factura 
+3.Establecemos los filtros por los que queremos buscarlas ya sea por el folio fiscal o por rangos de fecha en la emisión, y daremos click en Buscar CFDI 
+4.Marcar la casilla para seleccionar cada una o seleccionamos la casilla superior para descargar todas, luego Click en “Descargar Seleccionados”  
+5.Aparecera un banner con el folio de la descarga que nos indicara que la solicitud fue completada 
+6.En la esquina superior derecha hay un menu desplegable Consultar CFDI, click en factura electronica, depsues damos click en "recuperar Descargas de CFDI"
+8.Click en "Descargar paquete"
+
+Si quieres evitar el tener que esperar y tener tus facturas listas cuando las necesites descubre la solucion premium de Box Factura tus facturas estaran actualizadas y siempre validadas en tu bobeda digital. 
+
+ 
+
+
+
+
+
+

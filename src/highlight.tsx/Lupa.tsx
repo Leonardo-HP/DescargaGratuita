@@ -27,7 +27,7 @@ export const Lupa: React.FC<{
 
 	duracionCaja,
 	size,
-	imagenScale,
+
 	direccion,
 }) => {
 	const frame = useCurrentFrame();
@@ -39,33 +39,45 @@ export const Lupa: React.FC<{
 	const duracion = duracionCaja / 2;
 	const src = direccion;
 
-	const imgScale = imagenScale;
+
 
 	/* Tiempos */
 
-	const posicionX = interpolate(frame, [0, duracion], [1280, Xe], {
+	const posicionX = interpolate(frame, [0, duracion,duracion+1,duracion*2], [1280, Xe,Xe,300], {
 		easing: Easing.elastic(0.5),
 
 		extrapolateRight: 'clamp',
 	});
-	const posicionY = interpolate(frame, [0, duracion], [-size, Ye], {
+	const posicionY = interpolate(frame, [0, duracion,duracion+1,duracion*2], [-size, Ye,Ye,200], {
 		easing: Easing.elastic(0.8),
 
 		extrapolateRight: 'clamp',
 	});
 
-	const escala = interpolate(frame, [0, duracion], [-size, Ye], {
+	const escala = interpolate(frame, [duracion, duracion*2 ], [1, 3], {
 		easing: Easing.elastic(0.8),
 
+		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const posicionDentroX = -posicionX;
+	
+	const posicionDentroX = -interpolate(frame, [0, duracion,duracion+1,duracion*2], [1280, Xe,Xe,-420], {
+		easing: Easing.elastic(0.5),
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const posicionDentroY= -interpolate(frame, [0, duracion,duracion+1,duracion*2], [-size, Ye,Ye,-10], {
+		easing: Easing.elastic(0.8),
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
-	const posicionDentroY = -posicionY;
+
+
 
 	return (
-		<AbsoluteFill
+		<div
 			style={{
 				transform: `translateX(${posicionX}px)  translateY(${posicionY}px)`,
 				width: `${ancho}px`,
@@ -73,35 +85,40 @@ export const Lupa: React.FC<{
 			}}
 		>
 			
-			<AbsoluteFill
+			<div
 				style={{
 					position: `absolute`,
 					width: `${ancho}px`,
 					height: `${altura}px`,
 					clipPath: `circle(50%)`,
+					transform: `scale(${escala}) `
+					
 				}}
 			>
-				<AbsoluteFill>
+				
 		
 					<Img
 						src={staticFile(src)}
 						style={{
-							transform: `scale(${imgScale})  translateX(${posicionDentroX}px)  translateY(${posicionDentroY}px)`,
-							width: `1804px`,
-							height: `1009px`,
+							transform: `scale(${escala})  translateX(${posicionDentroX}px)  translateY(${posicionDentroY}px)`,
+							width:`1280px`,
+							height: `720px`,
+							position: `absolute`,
 						}}
+
 					/>
 				
-				</AbsoluteFill>
-			</AbsoluteFill>
+	
+			</div>
 	
 			<div
 				style={{
-					border: `20px solid lightgrey`,
+					border: `10px solid lightgrey`,
 					borderRadius: `50%`,
 					position: `absolute`,
 					width: `${ancho}px`,
 					height: `${altura}px`,
+					transform: `scale(${escala})`
 				}}
 			/>
 
@@ -112,6 +129,6 @@ export const Lupa: React.FC<{
 					height: `(${altura})px`,
 				}}
 			/>
-		</AbsoluteFill>
+		</div>
 	);
 };
