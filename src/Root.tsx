@@ -1,7 +1,7 @@
 import {Composition} from 'remotion';
 import {MyComposition} from './Composition';
 import {MyComposition2} from './Composition2';
-import { MyTest } from './MyTest';
+import {MyTest} from './MyTest';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -18,10 +18,10 @@ export const RemotionRoot: React.FC = () => {
 				}}
 			/>
 
-		<Composition
+			<Composition
 				id="MyComp2"
 				component={MyComposition2}
-				durationInFrames={2000}
+				durationInFrames={590}
 				fps={60}
 				width={620}
 				height={400}
@@ -30,7 +30,7 @@ export const RemotionRoot: React.FC = () => {
 				}}
 			/>
 
-<Composition
+			<Composition
 				id="Test"
 				component={MyTest}
 				durationInFrames={2000}
@@ -40,11 +40,8 @@ export const RemotionRoot: React.FC = () => {
 				defaultProps={{
 					empiezaX: 1000,
 					empiezaY: 1000,
-        }}
+				}}
 			/>
-
-
-
 		</>
 	);
 };

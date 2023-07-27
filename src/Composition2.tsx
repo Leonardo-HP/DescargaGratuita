@@ -3,16 +3,13 @@ import {
 	Img,
 	OffthreadVideo,
 	Sequence,
-	Video,
-	interpolate,
 	staticFile,
-	useCurrentFrame,
 } from 'remotion';
 
 import {Light} from './highlight.tsx/Light';
 import {Caja} from './highlight.tsx/Caja';
 import {VideoScale} from './highlight.tsx/VideoScale';
-import {CompClick} from './CompCursorClick/CompClick/CompClick';
+import {CompCursorClick} from './CompCursorClick/CompCursorClick';
 
 export const MyComposition2 = () => {
 	return (
@@ -21,10 +18,10 @@ export const MyComposition2 = () => {
 				<AbsoluteFill style={{background: 'white'}} />
 			</Sequence>
 
-			<Sequence durationInFrames={600}>
+			<Sequence durationInFrames={45}>
 				<OffthreadVideo
+					playbackRate={0.5}
 					src={staticFile('primeraParte.webm')}
-					startFrom={900}
 					style={{
 						width: `1000px`,
 						height: `650px`,
@@ -111,25 +108,24 @@ export const MyComposition2 = () => {
 
 			<Sequence from={349}>
 				<AbsoluteFill>
-					<Img src={staticFile('ScreenshotLogin.png')} />
+					<Img
+						src={staticFile('ScreenshotLogin.png')}
+						height={402}
+						width={620}
+					/>
 				</AbsoluteFill>
 			</Sequence>
 
-			<AbsoluteFill>
-				<CompClick positionX={0} positionY={0} />
-			</AbsoluteFill>
-
-			<Sequence from={400}>
+			<Sequence from={350}>
 				<AbsoluteFill>
-					<Img src={staticFile('ScreenshotLogin.png')} />
+					<CompCursorClick
+						empiezaX={300}
+						empiezaY={210}
+						positionX={34}
+						positionY={27}
+					/>
 				</AbsoluteFill>
 			</Sequence>
-
-			
-
-
-
-
 		</div>
 	);
 };

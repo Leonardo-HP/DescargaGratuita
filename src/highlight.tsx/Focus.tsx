@@ -1,4 +1,4 @@
-import {Easing, Sequence, interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'remotion';
 
 export const Focus: React.FC<{
 	Height: number;

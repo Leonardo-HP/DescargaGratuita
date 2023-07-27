@@ -3,10 +3,7 @@ import {
 	Img,
 	OffthreadVideo,
 	Sequence,
-	Video,
-	interpolate,
 	staticFile,
-	useCurrentFrame,
 } from 'remotion';
 import {CheckMark} from './CheckMark/CheckMark';
 import {CortinillaSalida} from './Cortinillas/CortinillaSalida';
@@ -14,9 +11,7 @@ import {CortinillaEntrada} from './Cortinillas/CortinillaEntrada';
 import {Caja} from './highlight.tsx/Caja';
 import {MarcaTexto} from './highlight.tsx/MarcaTexto';
 import {Light} from './highlight.tsx/Light';
-import {IconBXF} from './highlight.tsx/LogosBXF';
 import {IconBXF2} from './highlight.tsx/LogosBXF2';
-import {VideoScale} from './highlight.tsx/VideoScale';
 import {Focus} from './highlight.tsx/Focus';
 import {Lupa} from './highlight.tsx/Lupa';
 
@@ -34,13 +29,7 @@ export const MyComposition = () => {
 			</Sequence>
 
 			<AbsoluteFill>
-	
-					<Img src={staticFile('screenShot.png')} style={{
-
-
-						
-					}}/>
-	
+				<Img src={staticFile('screenShot.png')} style={{}} />
 			</AbsoluteFill>
 
 			<Sequence durationInFrames={1200} from={300}>
@@ -146,7 +135,6 @@ export const MyComposition = () => {
 				</AbsoluteFill>
 			</Sequence>
 
-
 			<Sequence from={1150} durationInFrames={150}>
 				<AbsoluteFill>
 					<CortinillaSalida />
@@ -155,4 +143,3 @@ export const MyComposition = () => {
 		</div>
 	);
 };
-

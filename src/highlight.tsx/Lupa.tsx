@@ -1,12 +1,7 @@
 import {
-	AbsoluteFill,
 	Easing,
 	Img,
-	OffthreadVideo,
-	Sequence,
-	Video,
 	interpolate,
-	random,
 	staticFile,
 	useCurrentFrame,
 } from 'remotion';

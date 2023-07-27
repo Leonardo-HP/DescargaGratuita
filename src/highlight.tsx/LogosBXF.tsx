@@ -1,12 +1,4 @@
-import {
-	AbsoluteFill,
-	Easing,
-	Img,
-	Sequence,
-	interpolate,
-	staticFile,
-	useCurrentFrame,
-} from 'remotion';
+import {Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 
 export const IconBXF: React.FC<{
 	positionX: number;

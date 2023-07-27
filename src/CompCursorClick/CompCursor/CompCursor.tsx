@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-	AbsoluteFill,
-	Easing,
-	interpolate,
-	useCurrentFrame,
-} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame} from 'remotion';
 import {Cursor} from './Cursor';
 import {MovingCursor} from './MovingCursor';
 
@@ -13,8 +8,7 @@ export const CompCursor: React.FC<{
 	positionY: number;
 	empiezaX: number;
 	empiezaY: number;
-
-}> = ({positionX, positionY, empiezaX , empiezaY } ) => {
+}> = ({positionX, positionY, empiezaX, empiezaY}) => {
 	const X = positionX;
 	const Y = positionY;
 
@@ -23,13 +17,13 @@ export const CompCursor: React.FC<{
 
 	const frame = useCurrentFrame();
 
-	const smoothX = interpolate(frame, [0, 100], [Xi, X], {
+	const smoothX = interpolate(frame, [0, 100, 150, 200], [Xi, X, X, Xi], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const smoothY = interpolate(frame, [0, 100], [Yi, Y], {
+	const smoothY = interpolate(frame, [0, 100, 150, 200], [Yi, Y, Y, Yi], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',

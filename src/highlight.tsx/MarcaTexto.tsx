@@ -1,4 +1,4 @@
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import { interpolate, useCurrentFrame} from 'remotion';
 
 export const MarcaTexto: React.FC<{
 	Height: number;

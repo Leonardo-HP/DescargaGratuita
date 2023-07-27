@@ -6,8 +6,8 @@ export const MyTest = () => {
 		<div>
 			<AbsoluteFill>
 				<CompCursorClick
-					empiezaX={500}
-					empiezaY={500}
+					empiezaX={-1000}
+					empiezaY={-1000}
 					positionX={0}
 					positionY={0}
 				/>
