@@ -1,23 +1,19 @@
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion/.';
 
-export const CheckMarkScale: React.FC<{
+export const MovingOutside: React.FC<{
 	children: React.ReactNode;
 }> = ({children}) => {
 	const frame = useCurrentFrame();
 
-	const escala = interpolate(
-		frame,
-		[0, 5, 10, 15, 20, 25, 110, 115, 120],
-		[0, 1.2, 1.1, 1, 1, 1, 1, 1.2, 0],
-		{
-			extrapolateRight: 'clamp',
-		}
-	);
+	const Y = interpolate(frame, [0, 40], [0, 40], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
 	return (
 		<AbsoluteFill
 			style={{
-				transform: `scale(${escala})`,
+				transform: `translateY(${Y}px) `,
 			}}
 		>
 			{children}

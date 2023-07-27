@@ -10,10 +10,10 @@ export const Dot: React.FC = () => {
 		>
 			<div
 				style={{
-					height: 50,
-					width: 14,
+					height: 15,
+					width: 10,
 					borderRadius: 14 / 2,
-					backgroundColor: 'yellow',
+					backgroundColor: 'red',
 				}}
 			/>
 		</AbsoluteFill>

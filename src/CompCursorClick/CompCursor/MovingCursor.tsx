@@ -1,11 +1,11 @@
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion/.';
 
-export const Shrinking: React.FC<{
+export const MovingCursor: React.FC<{
 	children: React.ReactNode;
 }> = ({children}) => {
 	const frame = useCurrentFrame();
 
-	const size = interpolate(frame, [0, 5, 10], [0, 1, 0], {
+	const Y = interpolate(frame, [0, 10], [0, 50], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -13,7 +13,7 @@ export const Shrinking: React.FC<{
 	return (
 		<AbsoluteFill
 			style={{
-				scale: `${size}`,
+				transform: `translateY(${Y}px)`,
 			}}
 		>
 			{children}

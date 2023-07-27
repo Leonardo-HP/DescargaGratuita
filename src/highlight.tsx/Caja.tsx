@@ -36,7 +36,7 @@ export const Caja: React.FC<{
 		{extrapolateRight: 'clamp'}
 	);
 
-	const opacity = interpolate(frame, [duracion , duracion * 4], [1, 0], {
+	const opacity = interpolate(frame, [duracion, duracion * 4], [1, 0], {
 		extrapolateRight: 'clamp',
 	});
 
@@ -44,7 +44,6 @@ export const Caja: React.FC<{
 		<div
 			style={{
 				transform: `translateX(${X}px)  translateY(${Y}px)`,
-			
 			}}
 		>
 			<div
