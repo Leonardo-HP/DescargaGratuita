@@ -11,7 +11,7 @@ import {Caja} from './highlight.tsx/Caja';
 import {VideoScale} from './highlight.tsx/VideoScale';
 import {CompCursorClick} from './CompCursorClick/CompCursorClick';
 
-export const MyComposition2 = () => {
+export const Gif5 = () => {
 	return (
 		<div>
 			<Sequence>

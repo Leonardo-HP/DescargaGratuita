@@ -1,30 +1,17 @@
 import {MovingOutside} from './MovingOutside';
 import {Shrinking} from './Shrinking';
-import {Dot} from './Dot';
+
 import {Multiplicar} from './Multiplicar';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {Dot} from './Dot';
 
-export const CompClick: React.FC<{
-	positionX: number;
-	positionY: number;
-}> = ({positionX, positionY}) => {
-	const X = positionX;
-	const Y = positionY;
-
+export const CompClick:  React.FC = () => {
 	return (
-		<AbsoluteFill
-			style={{
-				transform: `translateX(${X}px)  translateY(${Y}px)`,
-			}}
-		>
-			<Multiplicar>
-				<MovingOutside>
-					<Shrinking>
-						<Dot />
-					</Shrinking>
-				</MovingOutside>
-			</Multiplicar>
+		<AbsoluteFill>
+				<Shrinking>
+					<Multiplicar><Dot/> </Multiplicar>
+				</Shrinking>
 		</AbsoluteFill>
 	);
 };

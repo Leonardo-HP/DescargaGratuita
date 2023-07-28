@@ -1,19 +1,16 @@
+import React from 'react';
+
 import {AbsoluteFill} from 'remotion/.';
 
 export const Dot: React.FC = () => {
 	return (
-		<AbsoluteFill
-			style={{
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-		>
+		<AbsoluteFill>
 			<div
 				style={{
-					height: 15,
-					width: 10,
+					height: 14,
+					width: 14,
 					borderRadius: 14 / 2,
-					backgroundColor: 'red',
+					backgroundColor: '#ccc',
 				}}
 			/>
 		</AbsoluteFill>

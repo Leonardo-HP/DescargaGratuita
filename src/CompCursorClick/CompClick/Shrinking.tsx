@@ -5,7 +5,7 @@ export const Shrinking: React.FC<{
 }> = ({children}) => {
 	const frame = useCurrentFrame();
 
-	const size = interpolate(frame, [0, 20, 40], [0, 0.5, 0], {
+	const Y = interpolate(frame, [0, 50], [0, 1], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -13,7 +13,7 @@ export const Shrinking: React.FC<{
 	return (
 		<AbsoluteFill
 			style={{
-				scale: `${size}`,
+				transform: `scale(${Y})`,
 			}}
 		>
 			{children}
