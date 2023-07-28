@@ -22,7 +22,6 @@ export const CompCursorClick: React.FC<{
 					transform: `translateX(${X}px)  translateY(${Y}px)`,
 				}}
 			>
-		
 				<AbsoluteFill>
 					<CompCursor empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
 				</AbsoluteFill>

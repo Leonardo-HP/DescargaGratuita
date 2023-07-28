@@ -1,19 +1,13 @@
-import {
-	AbsoluteFill,
-	Img,
-	OffthreadVideo,
-	Sequence,
-	staticFile,
-} from 'remotion';
+import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
+
+import {loadFont} from '@remotion/google-fonts/Oswald';
 
 import {CompCursorClick} from './CompCursorClick/CompCursorClick';
 import {Light} from './highlight.tsx/Light';
-import { IconBXF } from './highlight.tsx/LogosBXF';
-import { CompClick } from './CompCursorClick/CompClick/CompClick';
-import { Dot } from './CompCursorClick/CompClick/Dot';
-import { CompCursor } from './CompCursorClick/CompCursor/CompCursor';
-import { Multiplicar } from './CompCursorClick/CompClick/Multiplicar';
-import { MovingOutside } from './CompCursorClick/CompClick/MovingOutside';
+import {CompClick} from './CompCursorClick/CompClick/CompClick';
+import {IconBXFTexto} from './highlight.tsx/LogosBXFTexto';
+
+const {fontFamily} = loadFont();
 
 export const Gif1 = () => {
 	return (
@@ -40,20 +34,21 @@ export const Gif1 = () => {
 				</AbsoluteFill>
 			</Sequence>
 
-
 			<Sequence from={150}>
 				<AbsoluteFill>
-					<IconBXF
+					<IconBXFTexto
 						size={300}
 						positionX={250}
 						positionY={50}
 						duracionCaja={30}
-						rotacion={50}
-						direccion="Buzon.png"
+						rotacion={20}
+						texto="Descripcion del paso" 
+						imagenX={-25}
+						imagenY={0}
+						fuenteSize={20}
 					/>
 				</AbsoluteFill>
 			</Sequence>
-
 
 
 			<Sequence from={50}>
@@ -66,10 +61,7 @@ export const Gif1 = () => {
 					/>
 				</AbsoluteFill>
 
-
-<MovingOutside/>
-
-
+				<CompClick />
 			</Sequence>
 		</div>
 	);
