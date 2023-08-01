@@ -1,13 +1,11 @@
 import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
 
-import {loadFont} from '@remotion/google-fonts/Oswald';
 
 import {CompCursorClick} from './CompCursorClick/CompCursorClick';
 import {Light} from './highlight.tsx/Light';
 import {CompClick} from './CompCursorClick/CompClick/CompClick';
 import {IconBXFTexto} from './highlight.tsx/LogosBXFTexto';
 
-const {fontFamily} = loadFont();
 
 export const Gif1 = () => {
 	return (
@@ -61,7 +59,8 @@ export const Gif1 = () => {
 					/>
 				</AbsoluteFill>
 
-				<CompClick />
+		
+
 			</Sequence>
 		</div>
 	);

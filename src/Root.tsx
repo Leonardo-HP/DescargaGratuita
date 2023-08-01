@@ -40,7 +40,7 @@ export const RemotionRoot: React.FC = () => {
 				id="Gif1"
 				component={Gif1}
 				durationInFrames={600}
-				fps={50}
+				fps={30}
 				width={620}
 				height={400}
 

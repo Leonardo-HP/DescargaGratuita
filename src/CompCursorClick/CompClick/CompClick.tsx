@@ -1,18 +1,19 @@
-import { AbsoluteFill } from 'remotion';
+import {AbsoluteFill} from 'remotion';
 import {MovingOutside} from './MovingOutside';
 
 import {Multiplicar} from './Multiplicar';
 import React from 'react';
+import {Dot} from './Dot';
+import {Shrinking} from './Shrinking';
 
-export const CompClick:  React.FC = () => {
+export const CompClick: React.FC = () => {
 	return (
-<AbsoluteFill>
-				
-					<Multiplicar>
-
-						<MovingOutside/>
-					</Multiplicar>
-					</AbsoluteFill>
-
+		<Multiplicar>
+			<MovingOutside>
+				<Shrinking>
+					<Dot />
+				</Shrinking>
+			</MovingOutside>
+		</Multiplicar>
 	);
 };

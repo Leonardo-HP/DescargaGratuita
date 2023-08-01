@@ -12,7 +12,7 @@ export const Multiplicar: React.FC<{
 				return (
 					<AbsoluteFill
 						style={{
-							rotate: (i / AMOUNT) * (2 * Math.PI) + 'rad',
+							transform: `rotate(${(i / AMOUNT) * Math.PI * 2}rad)`,
 						}}
 					>
 						{children}

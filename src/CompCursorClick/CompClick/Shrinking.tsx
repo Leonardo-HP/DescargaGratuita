@@ -1,21 +1,22 @@
-import React from 'react';
+import {interpolate, useCurrentFrame} from 'remotion';
 import {AbsoluteFill} from 'remotion';
-import {interpolate} from 'remotion';
-import {useCurrentFrame} from 'remotion';
+import React from 'react';
 
-export const MovingOutside: React.FC<{
+export const Shrinking: React.FC<{
 	children: React.ReactNode;
 }> = ({children}) => {
 	const frame = useCurrentFrame();
-
-	const Y = interpolate(frame, [0, 10], [0, -30], {
+	const scale = interpolate(frame, [0,5,10], [0,1,0 ], {
+		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
+
+
 
 	return (
 		<AbsoluteFill
 			style={{
-				transform: `translateY(${Y}px)`,
+				transform: `scale(${scale})`,
 			}}
 		>
 			{children}

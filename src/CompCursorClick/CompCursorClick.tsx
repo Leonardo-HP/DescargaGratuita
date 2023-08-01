@@ -25,7 +25,15 @@ export const CompCursorClick: React.FC<{
 				<AbsoluteFill>
 					<CompCursor empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
 				</AbsoluteFill>
-
+<Sequence from={100}>
+				<AbsoluteFill
+					style={{
+						transform: `translateX(${X-3}px)  translateY(${Y+45}px)`,
+					}}
+				>
+					<CompClick />
+				</AbsoluteFill>
+				</Sequence>
 			</AbsoluteFill>
 		</Sequence>
 	);
