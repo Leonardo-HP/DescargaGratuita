@@ -11,7 +11,7 @@ export const Cursor: React.FC = () => {
 			<Img
 				src={staticFile('Cursor.png')}
 				style={{
-					height: `12px`,
+					height: `30px`,
 				}}
 			/>
 		</AbsoluteFill>

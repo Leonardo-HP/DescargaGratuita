@@ -1,11 +1,8 @@
 import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
 
-
 import {CompCursorClick} from './CompCursorClick/CompCursorClick';
 import {Light} from './highlight.tsx/Light';
-import {CompClick} from './CompCursorClick/CompClick/CompClick';
 import {IconBXFTexto} from './highlight.tsx/LogosBXFTexto';
-
 
 export const Gif1 = () => {
 	return (
@@ -40,14 +37,13 @@ export const Gif1 = () => {
 						positionY={50}
 						duracionCaja={30}
 						rotacion={20}
-						texto="Descripcion del paso" 
+						texto="Descripcion del paso"
 						imagenX={-25}
 						imagenY={0}
 						fuenteSize={20}
 					/>
 				</AbsoluteFill>
 			</Sequence>
-
 
 			<Sequence from={50}>
 				<AbsoluteFill>
@@ -58,9 +54,6 @@ export const Gif1 = () => {
 						positionY={-7}
 					/>
 				</AbsoluteFill>
-
-		
-
 			</Sequence>
 		</div>
 	);

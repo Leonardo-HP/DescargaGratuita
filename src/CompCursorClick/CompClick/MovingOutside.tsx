@@ -8,7 +8,7 @@ export const MovingOutside: React.FC<{
 }> = ({children}) => {
 	const frame = useCurrentFrame();
 
-	const Y = interpolate(frame, [0, 10], [0, -30], {
+	const Y = interpolate(frame, [0, 10], [0, -50], {
 		extrapolateRight: 'clamp',
 	});
 

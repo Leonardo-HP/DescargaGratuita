@@ -22,18 +22,18 @@ export const CompCursorClick: React.FC<{
 					transform: `translateX(${X}px)  translateY(${Y}px)`,
 				}}
 			>
+				<Sequence from={100}>
+					<AbsoluteFill
+						style={{
+							transform: `translateX(${X - 8}px)  translateY(${Y + 38}px)`,
+						}}
+					>
+						<CompClick />
+					</AbsoluteFill>
+				</Sequence>
 				<AbsoluteFill>
 					<CompCursor empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
 				</AbsoluteFill>
-<Sequence from={100}>
-				<AbsoluteFill
-					style={{
-						transform: `translateX(${X-3}px)  translateY(${Y+45}px)`,
-					}}
-				>
-					<CompClick />
-				</AbsoluteFill>
-				</Sequence>
 			</AbsoluteFill>
 		</Sequence>
 	);

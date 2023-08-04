@@ -6,12 +6,10 @@ export const Shrinking: React.FC<{
 	children: React.ReactNode;
 }> = ({children}) => {
 	const frame = useCurrentFrame();
-	const scale = interpolate(frame, [0,5,10], [0,1,0 ], {
+	const scale = interpolate(frame, [0, 5, 10], [0, 1, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-
-
 
 	return (
 		<AbsoluteFill

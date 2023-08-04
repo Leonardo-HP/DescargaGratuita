@@ -51,8 +51,8 @@ export const RemotionRoot: React.FC = () => {
 				component={Gif2}
 				durationInFrames={590}
 				fps={60}
-				width={620}
-				height={400}
+				width={1280}
+				height={720}
 				defaultProps={{
 					default: '0',
 				}}

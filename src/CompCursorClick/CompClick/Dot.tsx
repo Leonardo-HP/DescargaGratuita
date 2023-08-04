@@ -11,8 +11,8 @@ export const Dot: React.FC = () => {
 		>
 			<div
 				style={{
-					height: 5,
-					width: 5,
+					height: 7,
+					width: 7,
 					borderRadius: 14 / 2,
 					backgroundColor: 'red',
 				}}
