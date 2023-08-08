@@ -1,14 +1,17 @@
+import { interpolate, useCurrentFrame } from 'remotion';
 import {Letra} from './Letra';
 export const LetrasCaptcha: React.FC<{
 	Y: number;
 	X: number;
 	inicio: number;
 }> = ({Y, X,inicio}) => {
+	const frame = useCurrentFrame();
 	return (
 		<div
 			style={{
 				display: 'flex',
 				transform: `translateX(${X}px) translateY(${Y}px)`,
+				opacity: interpolate(frame, [inicio, inicio + 1], [0, 1]),
 			}}
 		>
 			<Letra inicio={0+inicio}>P</Letra>
