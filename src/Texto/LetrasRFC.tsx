@@ -1,5 +1,4 @@
 import {interpolate, useCurrentFrame} from 'remotion';
-import {Appear} from './Appear';
 import {Letra} from './Letra';
 export const LetrasRFC: React.FC<{
 	Y: number;

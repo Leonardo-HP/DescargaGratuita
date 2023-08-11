@@ -1,9 +1,16 @@
 import React from 'react';
-import {AbsoluteFill, Easing, interpolate, useCurrentFrame} from 'remotion';
+import {
+	AbsoluteFill,
+	Easing,
+	Sequence,
+	interpolate,
+	useCurrentFrame,
+} from 'remotion';
 import {Cursor} from './Cursor';
-import {MovingCursor} from './MovingCursor';
+import {CompClick} from '../CompClick/CompClick';
+import {Cursor2} from './Cursor2';
 
-export const CompCursor: React.FC<{
+export const CompCursor2: React.FC<{
 	positionX: number;
 	positionY: number;
 	empiezaX: number;
@@ -15,31 +22,31 @@ export const CompCursor: React.FC<{
 	const Xi = empiezaX;
 	const Yi = empiezaY;
 
-
-	
 	const frame = useCurrentFrame();
 
-	const smoothX = interpolate(frame, [0, 100, 150, 200], [Xi, X, X, Xi], {
+	const smoothX = interpolate(frame, [0, 100], [Xi, X], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const smoothY = interpolate(frame, [0, 100, 150, 200], [Yi, Y, Y, Yi], {
+	const smoothY = interpolate(frame, [0, 100], [Yi, Y], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
 	return (
-		<AbsoluteFill
+		<div
 			style={{
 				transform: `translateX(${smoothX}px)  translateY(${smoothY}px)`,
 			}}
 		>
-			<MovingCursor>
-				<Cursor />
-			</MovingCursor>
-		</AbsoluteFill>
+			<Cursor2 />
+
+
+
+
+		</div>
 	);
 };

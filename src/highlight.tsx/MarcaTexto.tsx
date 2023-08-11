@@ -28,8 +28,8 @@ export const MarcaTexto: React.FC<{
 
 	/* Tiempos */
 	const cierreArriba = interpolate(frame, [0, duracion], [100, 0], {
-		extrapolateRight: 'clamp',
-	});
+			extrapolateRight: 'clamp',
+		});
 	const cierreMedio = interpolate(frame, [duracion, duracion * 2], [100, 0], {
 		extrapolateRight: 'clamp',
 	});

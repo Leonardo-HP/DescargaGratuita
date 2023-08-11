@@ -1,6 +1,6 @@
 import { interpolate, useCurrentFrame} from 'remotion';
 
-export const Light: React.FC<{
+export const Flash: React.FC<{
 	Height: number;
 	Width: number;
 	positionX: number;
@@ -16,27 +16,11 @@ export const Light: React.FC<{
 
 	/* Tiempos */
 
-	const cierre1 = interpolate(frame, [0, duracion / 4], [0, 200], {
+	const opacidad = interpolate(frame, [0, duracion / 4,duracion ], [0, 0.5,0], {
 		extrapolateRight: 'clamp',
 	});
 
-	const cierre2 = interpolate(frame, [0, duracion / 4], [-100, 100], {
-		extrapolateRight: 'clamp',
-	});
 
-	const cierre3 = interpolate(
-		frame,
-		[duracion / 4, (duracion / 4) * 2],
-		[0, 200],
-		{extrapolateRight: 'clamp'}
-	);
-
-	const cierre4 = interpolate(
-		frame,
-		[duracion / 4, (duracion / 4) * 2],
-		[-100, 100],
-		{extrapolateRight: 'clamp'}
-	);
 
 	return (
 		<div
@@ -46,12 +30,11 @@ export const Light: React.FC<{
 		>
 			<div
 				style={{
-					opacity: '0.5',
+					opacity: `${opacidad}`,
 					position: `absolute`,
 					background: '#CC1E2C',
 					width: `${ancho}px`,
 					height: `${altura}px`,
-					clipPath: `polygon(${cierre3}% 0%, ${cierre1}% 0%, ${cierre2}% 100%, ${cierre4}% 100%)`,
 				}}
 			/>
 		</div>

@@ -8,12 +8,18 @@ export const CompCursorClick: React.FC<{
 	positionY: number;
 	empiezaX: number;
 	empiezaY: number;
-}> = ({positionX, positionY, empiezaX, empiezaY}) => {
+
+
+
+}> = ({positionX, positionY, empiezaX, empiezaY, }) => {
 	const X = positionX;
 	const Y = positionY;
 
 	const Xi = empiezaX;
 	const Yi = empiezaY;
+
+
+
 
 	return (
 		<Sequence durationInFrames={200}>
@@ -31,9 +37,12 @@ export const CompCursorClick: React.FC<{
 						<CompClick />
 					</AbsoluteFill>
 				</Sequence>
+
 				<AbsoluteFill>
-					<CompCursor empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
+					<CompCursor empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y}  />
 				</AbsoluteFill>
+			
+			
 			</AbsoluteFill>
 		</Sequence>
 	);

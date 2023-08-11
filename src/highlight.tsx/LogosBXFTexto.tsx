@@ -50,6 +50,8 @@ export const IconBXFTexto: React.FC<{
 
 	const {fontFamily} = loadFont();
 
+const cajaDeTexto = 250
+
 	return (
 		<div
 			style={{
@@ -80,7 +82,7 @@ export const IconBXFTexto: React.FC<{
 					<br />
 					<br />
 					<br />
-					{textoa}
+					<div style={{width: `${cajaDeTexto}px`}}>{textoa}</div>
 				</center>
 			</div>
 
@@ -108,7 +110,7 @@ export const IconBXFTexto: React.FC<{
 					<br />
 					<br />
 					<br />
-					{textoa}
+					<div style={{width: `${cajaDeTexto}px`}}>{textoa}</div>
 				</center>
 			</div>
 
@@ -136,8 +138,7 @@ export const IconBXFTexto: React.FC<{
 					<br />
 					<br />
 					<br />
-
-					{textoa}
+					<div style={{width: `${cajaDeTexto}px`}}>{textoa}</div>
 				</center>
 			</div>
 
@@ -165,8 +166,7 @@ export const IconBXFTexto: React.FC<{
 					<br />
 					<br />
 					<br />
-
-					{textoa}
+					<div style={{width: `${cajaDeTexto}px`}}>{textoa}</div>
 				</center>
 			</div>
 		</div>
