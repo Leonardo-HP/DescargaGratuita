@@ -1,5 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {
+	AbsoluteFill,
+	Easing,
+	Sequence,
+	interpolate,
+	useCurrentFrame,
+} from 'remotion';
 import {CompClick} from './CompClick/CompClick';
 import {CompCursor} from './CompCursor/CompCursor';
 import {CompCursor2} from './CompCursor/CompCursor2';
@@ -17,19 +23,20 @@ export const CompCursorClick2: React.FC<{
 	const Xi = empiezaX;
 	const Yi = empiezaY;
 
-	return (
-		<div>
-			<Sequence >
-				
-					<CompCursor2
-						empiezaX={Xi}
-						empiezaY={Yi}
-						positionX={X}
-						positionY={Y}
-					/>
-				
-			</Sequence>
+	const frame = useCurrentFrame();
+	const click = interpolate(frame, [100, 103, 106], [1, 0.9, 1], {
+		easing: Easing.elastic(0.8),
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
+	return (
+		<div
+			style={{
+				transform: `scale(${click})`,
+			}}
+		>
+			<CompCursor2 empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
 		</div>
 	);
 };

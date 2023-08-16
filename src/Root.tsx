@@ -5,6 +5,7 @@ import {Login1} from './Steps/Login1';
 import {MyComposition2} from './Composition2';
 import {ServiciosDeFactura2} from './Steps/ServiciosDeFactura2';
 import { ConsultarFacturasEmitidas3 } from './Steps/ConsultarFacturasEmitidas3';
+import { PrimerPaso } from './Steps/PrimerPaso';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -70,14 +71,28 @@ export const RemotionRoot: React.FC = () => {
 			/>
 
 
+<Composition
+				id="PrimerPaso"
+				component={PrimerPaso}
+				durationInFrames={2000}
+				fps={60}
+				width={1280}
+				height={720}
+				defaultProps={{
+					default: '0',
+				}}
+			/>
+
+
+
 
 			<Composition
 				id="Test"
 				component={MyTest}
 				durationInFrames={2000}
 				fps={60}
-				width={620}
-				height={400}
+				width={1280}
+				height={720}
 				defaultProps={{
 					empiezaX: 1000,
 					empiezaY: 1000,
