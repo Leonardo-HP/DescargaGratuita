@@ -15,6 +15,9 @@ export const MyComposition2 = () => {
 		<div>
 		
 
+
+
+
 <Sequence from={200}>
 <Login1/>
 </Sequence>

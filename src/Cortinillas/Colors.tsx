@@ -14,12 +14,37 @@ export const Azul = () => {
 };
 
 export const Blanco = () => {
+	const frame = useCurrentFrame();
+	const opacidad = interpolate(frame, [400, 420], [1, 0], {
+		extrapolateRight: 'clamp',
+	});
 	return (
 		<div
 			style={{
+				position: 'absolute',
 				width: '1500px',
 				height: '720px',
 				background: 'white',
+				opacity: `${opacidad}`
+			}}
+		/>
+	);
+};
+
+
+export const Blanco2 = () => {
+	const frame = useCurrentFrame();
+	const opacidad = interpolate(frame, [0, 10,20], [0, 1,0], {
+		extrapolateRight: 'clamp',
+	});
+	return (
+		<div
+			style={{
+				position: 'absolute',
+				width: '1500px',
+				height: '720px',
+				background: 'white',
+				opacity: `${opacidad}`
 			}}
 		/>
 	);

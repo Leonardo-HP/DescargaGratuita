@@ -24,7 +24,7 @@ export const CompCursorClick2: React.FC<{
 	const Yi = empiezaY;
 
 	const frame = useCurrentFrame();
-	const click = interpolate(frame, [100, 103, 106], [1, 0.9, 1], {
+	const click = interpolate(frame, [100, 103, 106], [1, 0.99, 1], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -33,7 +33,7 @@ export const CompCursorClick2: React.FC<{
 	return (
 		<div
 			style={{
-				transform: `scale(${click})`,
+				
 			}}
 		>
 			<CompCursor2 empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />

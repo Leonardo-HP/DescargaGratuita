@@ -1,7 +1,7 @@
 import {Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {loadFont} from '@remotion/google-fonts/Oswald';
 
-export const IconBXFTexto: React.FC<{
+export const IconBXFTexto2: React.FC<{
 	positionX: number;
 	positionY: number;
 	rotacion: number;
@@ -11,11 +11,14 @@ export const IconBXFTexto: React.FC<{
 	imagenX: number;
 	imagenY: number;
 	fuenteSize: number;
+
+	duracionCajaCompleta: number;
 }> = ({
 	positionX,
 	positionY,
 	rotacion,
 	duracionCaja,
+	duracionCajaCompleta,
 	size,
 	texto,
 	imagenX,
@@ -29,28 +32,29 @@ export const IconBXFTexto: React.FC<{
 	const Y = positionY;
 	const grados = rotacion;
 	const duracion = duracionCaja / 4;
+	const duracionCompleta = duracionCajaCompleta;
 	const textoa = texto;
 	const imgX = imagenX;
 	const imgY = imagenY;
 	const fuenteSizeA = fuenteSize;
 
 	/* Tiempos */
-	const cierre1 = interpolate(frame, [0, duracion], [90, 10], {
+	const cierre1 = interpolate(frame, [0, duracion, duracion+duracionCompleta,duracion+duracionCompleta+duracion], [90, 10,10,90], {
 		extrapolateRight: 'clamp',
 	});
-	const cierre2 = interpolate(frame, [duracion, duracion * 2], [90, 10], {
+	const cierre2 = interpolate(frame, [duracion, duracion * 2, (duracion * 2)+duracionCompleta,(duracion * 2)+duracionCompleta+(duracion * 2)  ], [90, 10,10,90], {
 		extrapolateRight: 'clamp',
 	});
-	const cierre3 = interpolate(frame, [duracion * 2, duracion * 3], [90, 10], {
+	const cierre3 = interpolate(frame, [duracion * 2, duracion * 3, (duracion * 3)+duracionCompleta,(duracion * 3)+duracionCompleta+(duracion * 3)   ], [90, 10,10,90], {
 		extrapolateRight: 'clamp',
 	});
-	const cierre4 = interpolate(frame, [duracion * 3, duracion * 4], [90, 10], {
+	const cierre4 = interpolate(frame, [duracion * 3, duracion * 4,(duracion * 4)+duracionCompleta,(duracion * 4)+duracionCompleta+(duracion * 4)  ], [90, 10,10,90], {
 		extrapolateRight: 'clamp',
 	});
 
 	const {fontFamily} = loadFont();
 
-const cajaDeTexto = 250
+	const cajaDeTexto = 250;
 
 	return (
 		<div

@@ -17,7 +17,7 @@ export const Letra: React.FC<{
 				background: `white`,
 				color: interpolateColors(
 					frame,
-					[inicio, inicio + 1],
+					[inicio+30, inicio + 31],
 					['white', 'black']
 				),
 			}}

@@ -93,10 +93,7 @@ export const RemotionRoot: React.FC = () => {
 				fps={60}
 				width={1280}
 				height={720}
-				defaultProps={{
-					empiezaX: 1000,
-					empiezaY: 1000,
-				}}
+			
 			/>
 		</>
 	);

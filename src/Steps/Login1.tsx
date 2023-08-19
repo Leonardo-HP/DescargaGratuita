@@ -16,9 +16,16 @@ export const Login1 = () => {
 	return (
 		<div>
 			<ScreenShot1 />
-			<LetrasRFC X={367} Y={292} inicio={0 + 30} />
-			<LetrasPassword X={366} Y={332} inicio={57 + 30} />
-			<LetrasCaptcha X={366} Y={512} inicio={88 + 30} />
+			<Sequence from={50}>
+				<LetrasRFC X={367} Y={292} />
+			</Sequence>
+			<Sequence>
+				<LetrasPassword X={366} Y={352} />
+			</Sequence>
+			<Sequence>
+				<LetrasCaptcha X={366} Y={558} />
+			</Sequence>
+
 			<Sequence from={100}>
 				<CompCursorClick
 					positionX={100}

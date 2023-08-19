@@ -14,6 +14,9 @@ import {
 	VerMas,
 } from '../ScreenShots/ScreenshotPrimerPaso';
 import {CompCursorClick2} from '../CompCursorClick/CompCursorClick2';
+import {IconBXFTexto2} from '../highlight.tsx/LogosBXFTexto2';
+import {CompClick} from '../CompCursorClick/CompClick/CompClick';
+import {CompClick2} from '../CompCursorClick/CompClick/CompClick2';
 
 export const PrimerPaso = () => {
 	return (
@@ -28,29 +31,61 @@ export const PrimerPaso = () => {
 			<Sequence from={200}>
 				<PrimerPasoSS2 />
 			</Sequence>
-			<Sequence from={300}>
+			<Sequence from={200}>
 				<PrimerPasoSS3 />
 			</Sequence>
-
 
 			<Sequence from={400}>
 				<VerMas />
 			</Sequence>
 
-			<Sequence from={402}>
+			<Sequence from={300}>
 				<PrimerPasoSS4 />
 			</Sequence>
 
-
-
-			<Sequence>
-				<CompCursorClick2
+			<Sequence from={100}>
+				<IconBXFTexto2
 					positionX={50}
-					positionY={50}
-					empiezaX={0}
-					empiezaY={0}
+					positionY={300}
+					rotacion={170}
+					duracionCaja={20}
+					size={350}
+					texto="Instrucciones"
+					imagenX={0}
+					imagenY={-30}
+					fuenteSize={30}
+					duracionCajaCompleta={300}
 				/>
 			</Sequence>
+
+			<Sequence from={150} durationInFrames={100}>
+				<CompCursorClick2
+					positionX={500}
+					positionY={250}
+					empiezaX={1280}
+					empiezaY={250}
+				/>
+			</Sequence>
+
+			<Sequence from={450}>
+				<div
+					style={{
+						transform: 'translateX(710px) translateY(480px)',
+					}}
+				>
+					<CompClick2 />
+				</div>
+			</Sequence>
+			<Sequence from={250}>
+				<CompCursorClick2
+					positionX={710}
+					positionY={480}
+					empiezaX={500}
+					empiezaY={250}
+				/>
+			</Sequence>
+
+			
 		</div>
 	);
 };
