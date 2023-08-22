@@ -36,7 +36,7 @@ export const CompCursorClick2: React.FC<{
 				
 			}}
 		>
-			<CompCursor2 empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} />
+			<CompCursor2 empiezaX={Xi} empiezaY={Yi} positionX={X} positionY={Y} duracion={100} />
 		</div>
 	);
 };

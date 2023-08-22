@@ -17,6 +17,7 @@ import {CompCursorClick2} from '../CompCursorClick/CompCursorClick2';
 import {IconBXFTexto2} from '../highlight.tsx/LogosBXFTexto2';
 import {CompClick} from '../CompCursorClick/CompClick/CompClick';
 import {CompClick2} from '../CompCursorClick/CompClick/CompClick2';
+import { CompCursor2 } from '../CompCursorClick/CompCursor/CompCursor2';
 
 export const PrimerPaso = () => {
 	return (
@@ -59,12 +60,12 @@ export const PrimerPaso = () => {
 			</Sequence>
 
 			<Sequence from={150} durationInFrames={100}>
-				<CompCursorClick2
+				<CompCursor2
 					positionX={500}
 					positionY={250}
 					empiezaX={1280}
-					empiezaY={250}
-				/>
+					empiezaY={250} 
+					duracion={100}				/>
 			</Sequence>
 
 			<Sequence from={450}>

@@ -13,11 +13,7 @@ export const Azul = () => {
 	);
 };
 
-export const Blanco = () => {
-	const frame = useCurrentFrame();
-	const opacidad = interpolate(frame, [400, 420], [1, 0], {
-		extrapolateRight: 'clamp',
-	});
+export const BlancoBackground = () => {
 	return (
 		<div
 			style={{
@@ -25,16 +21,15 @@ export const Blanco = () => {
 				width: '1500px',
 				height: '720px',
 				background: 'white',
-				opacity: `${opacidad}`
 			}}
 		/>
 	);
 };
 
 
-export const Blanco2 = () => {
+export const Blanco3 = () => {
 	const frame = useCurrentFrame();
-	const opacidad = interpolate(frame, [0, 10,20], [0, 1,0], {
+	const opacidad = interpolate(frame, [400, 410], [1, 0], {
 		extrapolateRight: 'clamp',
 	});
 	return (
@@ -44,7 +39,27 @@ export const Blanco2 = () => {
 				width: '1500px',
 				height: '720px',
 				background: 'white',
-				opacity: `${opacidad}`
+				opacity: `${opacidad}`,
+			}}
+		/>
+	);
+};
+
+
+
+export const Blanco2 = () => {
+	const frame = useCurrentFrame();
+	const opacidad = interpolate(frame, [0, 10, 20], [0, 1, 0], {
+		extrapolateRight: 'clamp',
+	});
+	return (
+		<div
+			style={{
+				position: 'absolute',
+				width: '1500px',
+				height: '720px',
+				background: 'white',
+				opacity: `${opacidad}`,
 			}}
 		/>
 	);

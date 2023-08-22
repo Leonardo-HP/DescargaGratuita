@@ -4,8 +4,9 @@ import {MyTest} from './MyTest';
 import {Login1} from './Steps/Login1';
 import {MyComposition2} from './Composition2';
 import {ServiciosDeFactura2} from './Steps/ServiciosDeFactura2';
-import { ConsultarFacturasEmitidas3 } from './Steps/ConsultarFacturasEmitidas3';
-import { PrimerPaso } from './Steps/PrimerPaso';
+import {ConsultarFacturasEmitidas3} from './Steps/ConsultarFacturasEmitidas3';
+import {PrimerPaso} from './Steps/PrimerPaso';
+import { CompEmoji } from './Steps/IntroEmoji1/CompEmoji';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -58,7 +59,7 @@ export const RemotionRoot: React.FC = () => {
 				}}
 			/>
 
-<Composition
+			<Composition
 				id="ConsultarFacturasEmitidas3"
 				component={ConsultarFacturasEmitidas3}
 				durationInFrames={2000}
@@ -70,8 +71,7 @@ export const RemotionRoot: React.FC = () => {
 				}}
 			/>
 
-
-<Composition
+			<Composition
 				id="PrimerPaso"
 				component={PrimerPaso}
 				durationInFrames={2000}
@@ -83,9 +83,6 @@ export const RemotionRoot: React.FC = () => {
 				}}
 			/>
 
-
-
-
 			<Composition
 				id="Test"
 				component={MyTest}
@@ -93,8 +90,23 @@ export const RemotionRoot: React.FC = () => {
 				fps={60}
 				width={1280}
 				height={720}
-			
+				defaultProps={{
+					default: '0',
+				}}
 			/>
+
+<Composition
+				id="emoji"
+				component={CompEmoji}
+				durationInFrames={600}
+				fps={60}
+				width={1280}
+				height={720}
+				defaultProps={{
+					default: '0',
+				}}
+			/>
+
 		</>
 	);
 };

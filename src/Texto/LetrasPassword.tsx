@@ -8,7 +8,7 @@ export const LetrasPassword: React.FC<{
 	const frame = useCurrentFrame();
 	return (
 		<div>
-			<Sequence >
+			<Sequence>
 				<div
 					style={{
 						display: 'flex',
@@ -17,21 +17,21 @@ export const LetrasPassword: React.FC<{
 						position: 'absolute',
 					}}
 				>
-					<Letra inicio={0}>A</Letra>
-					<Letra inicio={5}>B</Letra>
-					<Letra inicio={10}>C</Letra>
-					<Letra inicio={15}>0</Letra>
-					<Letra inicio={20}>1</Letra>
-					<Letra inicio={25}>0</Letra>
-					<Letra inicio={30}>1</Letra>
-					<Letra inicio={35}>0</Letra>
-					<Letra inicio={40}>1</Letra>
-					<Letra inicio={45}>X</Letra>
-					<Letra inicio={50}>Y</Letra>
-					<Letra inicio={55}>Z</Letra>
+					<Letra inicio={0}> *</Letra>
+					<Letra inicio={5}> *</Letra>
+					<Letra inicio={10}>*</Letra>
+					<Letra inicio={15}>*</Letra>
+					<Letra inicio={20}>*</Letra>
+					<Letra inicio={25}>*</Letra>
+					<Letra inicio={30}>*</Letra>
+					<Letra inicio={35}>*</Letra>
+					<Letra inicio={40}>*</Letra>
+					<Letra inicio={45}>*</Letra>
+					<Letra inicio={50}>*</Letra>
+					<Letra inicio={55}>*</Letra>
 				</div>
 			</Sequence>
-			<Sequence >
+			<Sequence>
 				<div
 					style={{
 						transform: `translateX(${X}px) translateY(${Y}px)`,

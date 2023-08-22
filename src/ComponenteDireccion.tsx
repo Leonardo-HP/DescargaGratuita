@@ -14,6 +14,7 @@ import {Caret} from './Texto/Caret';
 import {CirclePop} from './highlight.tsx/CirclePop';
 import {CirclePop2} from './highlight.tsx/CirclePop2';
 import {CompCursorClick2} from './CompCursorClick/CompCursorClick2';
+import { Blanco3 } from './Cortinillas/Colors';
 
 export const ComponenteDireccion = () => {
 	const frame = useCurrentFrame();
@@ -66,6 +67,10 @@ export const ComponenteDireccion = () => {
 
 	return (
 		<div>
+	
+ <Blanco3/>
+
+
 			<div
 				style={{
 					filter: 'drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5))',
