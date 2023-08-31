@@ -89,6 +89,19 @@ export const Rojo = () => {
 	);
 };
 
+export const Blanco = () => {
+	return (
+		<div
+			style={{
+				width: '1500px',
+				height: '720px',
+				background: '#ce1d2c',
+			}}
+		/>
+	);
+};
+
+
 export const RojoBF = () => {
 	return (
 		<div>

@@ -14,34 +14,48 @@ import {Caret} from './Texto/Caret';
 import {CirclePop} from './highlight.tsx/CirclePop';
 import {CirclePop2} from './highlight.tsx/CirclePop2';
 import {CompCursorClick2} from './CompCursorClick/CompCursorClick2';
-import { Blanco3 } from './Cortinillas/Colors';
+import {Blanco3} from './Cortinillas/Colors';
 
 export const ComponenteDireccion = () => {
 	const frame = useCurrentFrame();
 
 	/* Cuando abre */
-	const abre = interpolate(frame, [80, 110,260,310,750,850], [90, 50,50,40,40,90], {
+	const abre = interpolate(
+		frame,
+		[80, 110, 260, 310, 750, 850],
+		[90, 50, 50, 40, 40, 90],
+		{
+			easing: Easing.elastic(1),
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
+
+	const X = interpolate(frame, [80, 110, 260, 310], [600, 410, 410, 370], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const X = interpolate(frame, [80, 110,260,310], [600, 410,410,370], {
-		easing: Easing.elastic(1),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
-
-	const color = interpolateColors(frame, [70, 80,790,810], ['#CC1E2C', 'white','white','#CC1E2C']);
+	const color = interpolateColors(
+		frame,
+		[70, 80, 790, 810],
+		['#CC1E2C', 'white', 'white', '#CC1E2C']
+	);
 
 	/// ///////////////////////////////////////////////////////////////
 
 	/* Sube */
-	const Y = interpolate(frame, [0, 30, 35, 70,850,885], [470, 235, 235, 0,0,-300], {
-		easing: Easing.elastic(1),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
+	const Y = interpolate(
+		frame,
+		[0, 30, 35, 70, 850, 885],
+		[470, 235, 235, 0, 0, -300],
+		{
+			easing: Easing.elastic(1),
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
 
 	/// ///////////////////////////////////////////////////////////////
 
@@ -67,9 +81,7 @@ export const ComponenteDireccion = () => {
 
 	return (
 		<div>
-	
- <Blanco3/>
-
+			<Blanco3 />
 
 			<div
 				style={{
@@ -110,14 +122,14 @@ export const ComponenteDireccion = () => {
 
 			<Sequence from={35}>
 				<CirclePop2
-					positionX={450}
+					positionX={250}
 					positionY={350}
 					rotacion={0}
 					duracionCaja={400}
-					size={380}
-					texto="Instrucciones"
+					size={800}
+					texto="Ingresamos al portal SAT"
 					imagenX={0}
-					imagenY={30}
+					imagenY={90}
 					fuenteSize={40}
 				/>
 			</Sequence>

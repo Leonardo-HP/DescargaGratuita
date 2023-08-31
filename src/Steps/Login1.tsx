@@ -1,17 +1,23 @@
-import {Sequence, interpolate, useCurrentFrame} from 'remotion';
-import {CompCursorClick} from '../CompCursorClick/CompCursorClick';
+import {Img, Sequence, staticFile} from 'remotion';
 import {ScreenShot1} from '../ScreenShots/Screenshot1';
 import {LetrasCaptcha} from '../Texto/LetrasCaptcha';
 import {LetrasPassword} from '../Texto/LetrasPassword';
 import {LetrasRFC} from '../Texto/LetrasRFC';
-import {CompCursor2} from '../CompCursorClick/CompCursor/CompCursor2';
 import {IconBXFTexto2} from '../highlight.tsx/LogosBXFTexto2';
+import {
+	CompCursorLogin1,
+	CompCursorLogin2,
+	CompCursorLogin3,
+	CompCursorLogin4,
+	CompCursorLogin5,
+} from '../CompCursorClick/CompCursor/CompCursorLogin';
+import {RoughNotation} from 'react-rough-notation';
+
 
 export const Login1 = () => {
 	return (
 		<div>
 			<ScreenShot1 />
-
 			<Sequence from={200}>
 				<Sequence from={10}>
 					<LetrasRFC X={367} Y={292} />
@@ -24,8 +30,25 @@ export const Login1 = () => {
 				</Sequence>
 			</Sequence>
 
+			<Sequence from={615}>
+				<div
+					style={{
+						transform: 'translateX(719px) translateY(564px)',
+						clipPath: `inset(5% 20% 20% 20% ) `,
+					}}
+				>
+					<Img
+						src={staticFile('BotonEnviar.png')}
+						style={{
+							width: '228px',
+							height: '130px',
+						}}
+					/>
+				</div>
+			</Sequence>
+
 			<Sequence from={100} durationInFrames={210}>
-				<CompCursor2
+				<CompCursorLogin1
 					positionX={800}
 					positionY={300}
 					empiezaX={1290}
@@ -35,7 +58,7 @@ export const Login1 = () => {
 			</Sequence>
 
 			<Sequence from={310} durationInFrames={140}>
-				<CompCursor2
+				<CompCursorLogin2
 					positionX={800}
 					positionY={360}
 					empiezaX={800}
@@ -45,7 +68,7 @@ export const Login1 = () => {
 			</Sequence>
 
 			<Sequence from={450} durationInFrames={150}>
-				<CompCursor2
+				<CompCursorLogin3
 					positionX={800}
 					positionY={570}
 					empiezaX={800}
@@ -54,26 +77,33 @@ export const Login1 = () => {
 				/>
 			</Sequence>
 
-
 			<Sequence from={600} durationInFrames={50}>
-				<CompCursor2
-					positionX={1290}
-					positionY={720}
+				<CompCursorLogin4
+					positionX={850}
+					positionY={640}
 					empiezaX={800}
 					empiezaY={570}
 					duracion={50}
 				/>
 			</Sequence>
 
-
+			<Sequence from={650} durationInFrames={50}>
+				<CompCursorLogin5
+					positionX={1290}
+					positionY={720}
+					empiezaX={850}
+					empiezaY={640}
+					duracion={50}
+				/>
+			</Sequence>
 
 			<Sequence from={50}>
 				<IconBXFTexto2
 					positionX={690}
 					positionY={-140}
-					rotacion={0}
+					rotacion={150}
 					duracionCaja={30}
-					size={540}
+					size={570}
 					texto="Ingresamos nuestras credenciales."
 					imagenX={-10}
 					imagenY={20}
@@ -81,6 +111,9 @@ export const Login1 = () => {
 					duracionCajaCompleta={100}
 				/>
 			</Sequence>
+
+\
+
 		</div>
 	);
 };

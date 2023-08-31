@@ -17,7 +17,7 @@ import {BlancoBackground} from '../../Cortinillas/Colors';
 export const CompEmoji = () => {
 	const frame = useCurrentFrame();
 
-	const entrada = interpolate(frame, [50, 100], [-1280, 0], {
+	const entrada = interpolate(frame, [0, 100], [-1280, 0], {
 		easing: Easing.elastic(0.7),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -84,7 +84,6 @@ export const CompEmoji = () => {
 	return (
 		<div>
 			<BlancoBackground />
-
 			<div
 				style={{
 					transform: `scale(${escala}) translateY(${centroY}px) translateX(${centroX}px)`,
@@ -92,7 +91,7 @@ export const CompEmoji = () => {
 					position: 'absolute',
 				}}
 			>
-				<Sequence from={50}>
+				<Sequence >
 					<div
 						style={{
 							transform: `translateY(-100px) translateX(${entrada}px)`,
@@ -115,7 +114,7 @@ export const CompEmoji = () => {
 					</div>
 				</Sequence>
 
-				<Sequence from={200}>
+				<Sequence from={150}>
 					<div
 						style={{
 							transform: `translateY(${entrada3}px) translateX(${entrada2}px)`,

@@ -21,9 +21,12 @@
   "dependencies": {
     "@remotion/cli": "4.0.12",
     "@remotion/google-fonts": "^4.0.12",
+    "@remotion/paths": "^4.0.28",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "remotion": "4.0.12"
+    "react-rough-notation": "^1.0.5",
+    "remotion": "4.0.12",
+    "rough-notation": "^0.5.1"
   },
   "packageManager": "npm@9.3.1"
 }

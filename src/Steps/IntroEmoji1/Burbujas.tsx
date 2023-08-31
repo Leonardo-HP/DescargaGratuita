@@ -1,4 +1,11 @@
-import {Easing, Img, interpolate, interpolateColors, staticFile, useCurrentFrame} from 'remotion';
+import {
+	Easing,
+	Img,
+	interpolate,
+	interpolateColors,
+	staticFile,
+	useCurrentFrame,
+} from 'remotion';
 import {EmojiImagen} from './EmojiImagen';
 import {
 	BurbujaPuntosCarga,
@@ -20,19 +27,13 @@ export const PrimeraBurbuja = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const union = interpolate(frame, [0, 50, 100], [0, -50, 0], {
+	const cambioA = interpolate(frame, [300, 310], [0, 250], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const cambioA = interpolate(frame, [260, 270], [0, 250], {
-		easing: Easing.elastic(0.8),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
-
-	const cambioB = interpolate(frame, [260, 270], [250, 0], {
+	const cambioB = interpolate(frame, [300, 310], [250, 0], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -118,24 +119,20 @@ export const SegundaBurbuja = () => {
 	);
 };
 
-
 export const TerceraBurbuja = () => {
-
 	const frame = useCurrentFrame();
 
-	const ColorClick = interpolateColors(frame, [270, 271], ["#F2F2F2", "#ce1d2c"])
-	
+	const ColorClick = interpolateColors(
+		frame,
+		[270, 271],
+		['#F2F2F2', '#ce1d2c']
+	);
 
-	const escala = interpolate(frame, [270, 280,290], [1, 1.1,1], {
+	const escala = interpolate(frame, [270, 280, 290], [1, 1.1, 1], {
 		easing: Easing.elastic(0.8),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-
-
-
-
-
 
 	return (
 		<div
@@ -151,10 +148,8 @@ export const TerceraBurbuja = () => {
 		>
 			<div
 				style={{
-			
 					transform: ' translateX(500px) translateY(80px)',
 					position: 'absolute',
-					
 				}}
 			>
 				<TextoTerceraBurbuja />

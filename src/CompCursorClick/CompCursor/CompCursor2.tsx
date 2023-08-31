@@ -9,7 +9,6 @@ export const CompCursor2: React.FC<{
 	empiezaY: number;
   duracion: number;
 
-
 }> = ({positionX, positionY, empiezaX, empiezaY, duracion}) => {
 	const X = positionX;
 	const Y = positionY;
@@ -37,7 +36,7 @@ export const CompCursor2: React.FC<{
 				transform: `translateX(${smoothX}px)  translateY(${smoothY}px)`,
 			}}
 		>
-			<Cursor2 />
+			<Cursor2 /> 
 		</div>
 	);
 };

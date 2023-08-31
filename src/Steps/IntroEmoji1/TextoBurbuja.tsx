@@ -125,7 +125,7 @@ export const TextoTerceraBurbuja = () => {
 				color: `${ColorClick}`,
 			}}
 		>
-			Let's go!
+			Vamos! 
 		</div>
 	);
 };

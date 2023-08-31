@@ -1,6 +1,6 @@
 import {Sequence, interpolate, useCurrentFrame} from 'remotion';
-import {Letra} from './Letra';
-import {CaretRFC} from './Carets';
+import {Letra, LetraBlanco} from './Letra';
+import {CaretCaptcha, CaretRFC} from './Carets';
 export const LetrasCaptcha: React.FC<{
 	Y: number;
 	X: number;
@@ -8,7 +8,7 @@ export const LetrasCaptcha: React.FC<{
 	const frame = useCurrentFrame();
 	return (
 		<div>
-			<Sequence >
+			<Sequence>
 				<div
 					style={{
 						display: 'flex',
@@ -17,27 +17,22 @@ export const LetrasCaptcha: React.FC<{
 						position: 'absolute',
 					}}
 				>
-					<Letra inicio={0}>A</Letra>
-					<Letra inicio={5}>B</Letra>
-					<Letra inicio={10}>C</Letra>
-					<Letra inicio={15}>0</Letra>
-					<Letra inicio={20}>1</Letra>
-					<Letra inicio={25}>0</Letra>
-					<Letra inicio={30}>1</Letra>
-					<Letra inicio={35}>0</Letra>
-					<Letra inicio={40}>1</Letra>
-					<Letra inicio={45}>X</Letra>
-					<Letra inicio={50}>Y</Letra>
-					<Letra inicio={55}>Z</Letra>
+					<Letra inicio={0}> P</Letra>
+					<Letra inicio={5}> S</Letra>
+					<Letra inicio={10}>W</Letra>
+					<Letra inicio={15}>H</Letra>
+					<Letra inicio={20}>V</Letra>
+					<Letra inicio={25}>W</Letra>
+					<LetraBlanco inicio={30}>WWWWWWWWWW</LetraBlanco>
 				</div>
 			</Sequence>
-			<Sequence >
+			<Sequence>
 				<div
 					style={{
 						transform: `translateX(${X}px) translateY(${Y}px)`,
 					}}
 				>
-					<CaretRFC />
+					<CaretCaptcha />
 				</div>
 			</Sequence>
 		</div>

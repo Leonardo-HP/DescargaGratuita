@@ -37,6 +37,7 @@ export const IconBXF2: React.FC<{
 	const random1 = Math.trunc(random(X+rotacion + 1) * 10) - 5;
 	const random2 = Math.trunc(random(X+rotacion + 2) * 10) - 5;
 	const random3 = Math.trunc(random(X+rotacion + 3) * 10) - 5;
+	
 	const random4 = Math.trunc(random(X+rotacion + 4) * 10) - 5;
 
 	/* Tilt */

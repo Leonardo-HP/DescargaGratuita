@@ -28,3 +28,29 @@ export const Letra: React.FC<{
 };
 
 
+export const LetraBlanco: React.FC<{
+	inicio: number;
+	children: React.ReactNode;
+}> = ({inicio, children}) => {
+	const frame = useCurrentFrame();
+	const {fontFamily} = loadFont();
+
+	return (
+		<div
+			style={{
+				fontFamily,
+				fontSize: '19px',
+				background: `white`,
+				color: interpolateColors(
+					frame,
+					[inicio+30, inicio + 31],
+					['white', 'white']
+				),
+			}}
+		>
+			{children}
+		</div>
+	);
+};
+
+

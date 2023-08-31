@@ -1,6 +1,6 @@
 import {Sequence, interpolate, useCurrentFrame} from 'remotion';
-import {Letra} from './Letra';
-import {CaretRFC} from './Carets';
+import {Letra, LetraBlanco} from './Letra';
+import {CaretPassword, CaretRFC} from './Carets';
 export const LetrasPassword: React.FC<{
 	Y: number;
 	X: number;
@@ -26,9 +26,13 @@ export const LetrasPassword: React.FC<{
 					<Letra inicio={30}>*</Letra>
 					<Letra inicio={35}>*</Letra>
 					<Letra inicio={40}>*</Letra>
-					<Letra inicio={45}>*</Letra>
-					<Letra inicio={50}>*</Letra>
-					<Letra inicio={55}>*</Letra>
+					<LetraBlanco inicio={45}>*</LetraBlanco>
+					<LetraBlanco inicio={50}>*</LetraBlanco>
+					<LetraBlanco inicio={55}>*</LetraBlanco>
+					<LetraBlanco inicio={60}>*</LetraBlanco>
+					<LetraBlanco inicio={65}>*</LetraBlanco>
+					<LetraBlanco inicio={70}>*</LetraBlanco>
+					<LetraBlanco inicio={75}>*</LetraBlanco>
 				</div>
 			</Sequence>
 			<Sequence>
@@ -37,7 +41,7 @@ export const LetrasPassword: React.FC<{
 						transform: `translateX(${X}px) translateY(${Y}px)`,
 					}}
 				>
-					<CaretRFC />
+					<CaretPassword />
 				</div>
 			</Sequence>
 		</div>

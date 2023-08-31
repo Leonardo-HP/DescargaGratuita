@@ -15,13 +15,13 @@ import {
 } from '../ScreenShots/ScreenshotPrimerPaso';
 import {CompCursorClick2} from '../CompCursorClick/CompCursorClick2';
 import {IconBXFTexto2} from '../highlight.tsx/LogosBXFTexto2';
-import {CompClick} from '../CompCursorClick/CompClick/CompClick';
 import {CompClick2} from '../CompCursorClick/CompClick/CompClick2';
 import { CompCursor2 } from '../CompCursorClick/CompCursor/CompCursor2';
 
 export const PrimerPaso = () => {
 	return (
 		<div>
+			<Sequence durationInFrames={600}>
 			<Sequence>
 				<PrimerPasoSSO />
 			</Sequence>
@@ -46,14 +46,14 @@ export const PrimerPaso = () => {
 
 			<Sequence from={100}>
 				<IconBXFTexto2
-					positionX={50}
-					positionY={300}
+					positionX={-50}
+					positionY={230}
 					rotacion={170}
 					duracionCaja={20}
-					size={350}
-					texto="Instrucciones"
+					size={500}
+					texto="Hacemos click en 'Cancela y recupera tus cuentas'"
 					imagenX={0}
-					imagenY={-30}
+					imagenY={-10}
 					fuenteSize={30}
 					duracionCajaCompleta={300}
 				/>
@@ -85,7 +85,7 @@ export const PrimerPaso = () => {
 					empiezaY={250}
 				/>
 			</Sequence>
-
+			</Sequence>
 			
 		</div>
 	);
