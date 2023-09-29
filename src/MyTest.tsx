@@ -1,7 +1,6 @@
 import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
 import {TextoManchaMask} from './highlight.tsx/TextoManchaMask';
 import {IconBXFTexto2} from './highlight.tsx/LogosBXFTexto2';
-import {TextoManchaMask1} from './highlight.tsx/TextoManchaMask1';
 
 export const MyTest = () => {
 	return (
