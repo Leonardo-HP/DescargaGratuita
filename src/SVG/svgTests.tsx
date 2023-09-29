@@ -1,44 +1,23 @@
-import {evolvePath, translatePath} from '@remotion/paths';
+import {evolvePath} from '@remotion/paths';
 import {
-	AbsoluteFill,
 	Easing,
-	Img,
 	interpolate,
 	random,
-	staticFile,
 	useCurrentFrame,
 } from 'remotion';
-import {Svg1} from './svg1';
 import {SvgSharp} from './svgSharp';
-import {SvgSmooth} from './svgSmooth';
 import {SvgCorchete} from './svgCorchete';
 import {SvgCrossed} from './svgCrossed';
 import {SvgHighlighter} from './svgHighlighter';
-import { SvgCirculo } from './svgCirculo';
+import {SvgCirculo} from './svgCirculo';
+import { SvgSmooth } from '../../svgSmooth';
 
 export const SvgTests = () => {
 	const frame = useCurrentFrame();
 
-	const entrada = interpolate(frame, [0, 100], [0, 1000], {
-		easing: Easing.elastic(0.7),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
 
-	const path =
-		'M 100 100 l 800 0 m 100 100 l 0 800 m -100 100 l -800 0  m -100 -100 l 0 -800 ';
-	const evolution = evolvePath(0.5, path);
 
-	const element = (
-		<path
-			d={path}
-			strokeDasharray={evolution.strokeDasharray}
-			strokeDashoffset={evolution.strokeDashoffset}
-		/>
-	);
 
-	const random1 = Math.trunc(random(10));
-	const random2 = Math.trunc(random(10));
 
 	return (
 		<div>
@@ -93,15 +72,6 @@ export const SvgTests = () => {
 			<div
 				style={{
 					position: 'absolute',
-					transform: 'translateY(-350px) translateX(600px)',
-				}}
-			>
-				<SvgSharp ancho={300} largo={300} />
-			</div>
-
-			<div
-				style={{
-					position: 'absolute',
 					transform: 'translateY(-350px) translateX(850px)',
 				}}
 			>
@@ -127,26 +97,18 @@ export const SvgTests = () => {
 			</div>
 
 
-
-			<div
-				style={{
-					position: 'absolute',
-					transform: 'translateY(-20px) translateX(600px)',
-				}}
-			>
-				<SvgHighlighter ancho={304} largo={300} />
-			</div>
-	
-
 			<div
 				style={{
 					position: 'absolute',
 					transform: 'translateY(-20px) translateX(900px)',
 				}}
 			>
-				<SvgCirculo ancho={304} largo={300} />
+				<SvgCirculo ancho={304} largo={300} seed={0} stroke={2}  />
 			</div>
-	
-		</div>
+
+
+	<SvgCirculo ancho={500} largo={500} seed={0} stroke={2}/>
+
+			</div>
 	);
 };

@@ -1,37 +1,75 @@
-import {Sequence} from 'remotion';
-import {PrimerPasoSSO} from './ScreenShots/ScreenshotPrimerPaso';
-import {ComponenteDireccion} from './ComponenteDireccion';
-import {Blanco2} from './Cortinillas/Colors';
-import {PrimerPaso} from './Steps/PrimerPaso';
-import {Login1} from './Steps/Login1';
-import {CompEmoji} from './Steps/IntroEmoji1/CompEmoji';
+import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
+import {TextoManchaMask} from './highlight.tsx/TextoManchaMask';
+import {IconBXFTexto2} from './highlight.tsx/LogosBXFTexto2';
+import {TextoManchaMask1} from './highlight.tsx/TextoManchaMask1';
 
 export const MyTest = () => {
 	return (
 		<div>
-			<Sequence durationInFrames={540}>
-				<CompEmoji />
+			<AbsoluteFill>
+				<Img src={staticFile('papel.jpg')} z-index="-23" />
+			</AbsoluteFill>
+
+			<div
+				style={{
+					transform: 'translateX(-400px) translateY(90px)',
+				}}
+			>
+				<IconBXFTexto2
+					positionX={800}
+					positionY={200}
+					rotacion={0}
+					duracionCaja={100}
+					size={500}
+					texto="instrucciones"
+					imagenX={0}
+					imagenY={-80}
+					fuenteSize={50}
+					duracionCajaCompleta={500}
+				/>
+			</div>
+
+			<Sequence>
+				<div
+					style={{
+						transform: 'translateX(60px) translateY(200px)',
+					}}
+				>
+					<TextoManchaMask
+						key={3}
+						duracionCaja={200}
+						seed={6}
+						altura={400}
+						ancho={400}
+						x={30}
+						y={20}
+						fontSize={10}
+						delay={300}
+					>
+						instrucciones
+					</TextoManchaMask>
+				</div>
 			</Sequence>
-
-			<Sequence from={540}>
-				<Sequence durationInFrames={870}>
-					<PrimerPasoSSO />
-				</Sequence>
-
-				<Sequence from={400} durationInFrames={480}>
-					<PrimerPaso />
-				</Sequence>
-
-				<Sequence from={880} durationInFrames={750}>
-					<Login1 />
-				</Sequence>
-
-				
-				<Sequence from={870}>
-					<Blanco2 />
-				</Sequence>
-
-				<ComponenteDireccion />
+			<Sequence from={50}>
+				<div
+					style={{
+						transform: 'translateX(700px) translateY(200px)',
+					}}
+				>
+					<TextoManchaMask
+						key={3}
+						duracionCaja={200}
+						seed={6}
+						altura={400}
+						ancho={400}
+						x={30}
+						y={20}
+						fontSize={10}
+						delay={300}
+					>
+						instrucciones
+					</TextoManchaMask>
+				</div>
 			</Sequence>
 		</div>
 	);

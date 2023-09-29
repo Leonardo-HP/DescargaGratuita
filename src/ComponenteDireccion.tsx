@@ -120,7 +120,7 @@ export const ComponenteDireccion = () => {
 				</div>
 			</div>
 
-			<Sequence from={35}>
+			<Sequence from={35} durationInFrames={400}>
 				<CirclePop2
 					positionX={250}
 					positionY={350}
@@ -143,7 +143,7 @@ export const ComponenteDireccion = () => {
 				/>
 			</Sequence>
 
-			<Sequence from={405}>
+			<Sequence from={405} durationInFrames={200}>
 				<CompCursorClick2
 					positionX={1300}
 					positionY={800}

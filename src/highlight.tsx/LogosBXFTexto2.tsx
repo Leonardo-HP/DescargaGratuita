@@ -1,4 +1,4 @@
-import {Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import { interpolate,  useCurrentFrame} from 'remotion';
 import {loadFont} from '@remotion/google-fonts/Oswald';
 
 export const IconBXFTexto2: React.FC<{
@@ -11,8 +11,8 @@ export const IconBXFTexto2: React.FC<{
 	imagenX: number;
 	imagenY: number;
 	fuenteSize: number;
-
 	duracionCajaCompleta: number;
+
 }> = ({
 	positionX,
 	positionY,

@@ -141,3 +141,30 @@ export const CursorLogin5: React.FC = () => {
 	);
 };
 
+
+export const CursorServicios1: React.FC = () => {
+	const frame = useCurrentFrame();
+
+	let textoVariable = 'Cursor.png';
+	const numeroVariable = frame;
+
+	switch (true) {
+		case numeroVariable >= 60 :
+			textoVariable = 'HandCursor.png';
+			break;
+		default:
+			textoVariable = 'Cursor.png';
+	}
+	return (
+		<Img
+			src={staticFile(textoVariable)}
+			style={{
+				height: `30px`,
+				width: `20px`,
+			}}
+		/>
+	);
+};
+
+
+

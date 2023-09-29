@@ -1,17 +1,14 @@
-import {evolvePath} from '@remotion/paths';
-import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {  SvgTests } from './ScreenShots/SVG/svgTests';
+import {AbsoluteFill, Img, staticFile} from 'remotion';
+import { SvgTests } from './SVG/svgTests';
 
-export const MyComposition2 = () => {
-
+export const ServiciosDeFactura4 = () => {
 	return (
-		<div >
+		<div>
 			<AbsoluteFill>
-					<Img src={staticFile('papel.jpg')} z-index="-23" />
-				</AbsoluteFill>
-				
-			<SvgTests/>
+				<Img src={staticFile('papel.jpg')} z-index="-23" />
+			</AbsoluteFill>
 
+			<SvgTests />
 		</div>
 	);
 };

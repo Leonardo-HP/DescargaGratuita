@@ -1,5 +1,8 @@
 import {AbsoluteFill} from 'remotion';
+
 import {MovingOutside} from './MovingOutside';
+
+
 
 import {Multiplicar} from './Multiplicar';
 import React from 'react';

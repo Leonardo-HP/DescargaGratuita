@@ -1,13 +1,7 @@
 import {evolvePath} from '@remotion/paths';
-import {
-	interpolate,
-	random,
-	spring,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
+import {random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export const SvgSharp: React.FC<{
+export const SvgSmooth: React.FC<{
 	ancho: number;
 	largo: number;
 }> = ({ancho, largo}) => {
@@ -28,45 +22,30 @@ export const SvgSharp: React.FC<{
 	const random15 = Math.trunc(random(ancho + 15) * 10) - 5 + 10;
 	const random16 = Math.trunc(random(ancho + 16) * 10) - 5 + 10;
 
-	/**
-	 Randomness 
-
-	const random1 = 10;
-	const random2 = 10;
-	const random3 = 90;
-	const random4 = 90;
-	const random5 = 90;
-	const random6 = 90;
-	const random7 = 10;
-	const random8 = 10;
-	const random9 = 10;
-	const random10 = 10;
-	const random11 = 90;
-	const random12 = 90;
-	const random13 = 90;
-	const random14 = 90;
-	const random15 = 10;
-	const random16 = 10;
-
-	 */
-
 	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
 	const d = ` 
-		M10,10    Q20,${random1}          50,10     Q80,${random2}    90,10  
-							Q${random3},20          90,50     Q${random4},80    90,90   
-							Q80,${random5}          50,90          Q20,${random6}    10,90
-							Q${random7},80          10,50          Q${random8},20    10,10
-							Q20,${random9}          50,10     Q80,${random10}    90,10  
-							Q${random11},20          90,50     Q${random12},80    90,90   
-							Q80,${random13}          50,90          Q20,${random14}    10,90
-							Q${random15},80          10,50          Q${random16},20    10,10
-    
+		M10,10     S20,${random1}      50,10     S80,${random2}      90,10  
+							 S${random3},20      90,50     S${random4},80      90,90   
+						 	 S80,${random5}  	   50,90     S20,${random6}      10,90
+							 S${random7},80      10,50     S${random8},20      10,10
+							 S20,${random9}      50,10     S80,${random10}     90,10  
+							 S${random11},20     90,50     S${random12},80     90,90   
+							 S80,${random13}     50,90     S20,${random14}     10,90
+							 S${random15},80     10,50     S${random16},20     10,10
 		`;
 
-	const progress = interpolate(frame, [0, 50], [0, 0.5]);
+	const progress = spring({
+		fps,
+		frame,
+		config: {
+			stiffness: 30,
+		},
+		durationInFrames: 200,
+	});
 
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
-
 	return (
 		<div>
 			<svg
@@ -79,9 +58,10 @@ export const SvgSharp: React.FC<{
 					strokeDasharray={strokeDasharray}
 					strokeDashoffset={strokeDashoffset}
 					d={d}
-					stroke="currentColor"
+					stroke="blue"
 					stroke-width="1"
 					fill="none"
+					opacity={0.7}
 				/>
 			</svg>
 			<div
@@ -95,7 +75,7 @@ export const SvgSharp: React.FC<{
 					overflow: 'hidden',
 				}}
 			>
-				<p>Sharp</p>
+				<p>Smooth</p>
 			</div>
 		</div>
 	);

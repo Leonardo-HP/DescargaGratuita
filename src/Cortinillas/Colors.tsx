@@ -49,7 +49,7 @@ export const Blanco3 = () => {
 
 export const Blanco2 = () => {
 	const frame = useCurrentFrame();
-	const opacidad = interpolate(frame, [0, 10, 20], [0, 1, 0], {
+	const opacidad = interpolate(frame, [0, 20, 30], [0, 1, 0], {
 		extrapolateRight: 'clamp',
 	});
 	return (
@@ -89,6 +89,22 @@ export const Rojo = () => {
 	);
 };
 
+
+export const VerdeGobierno = () => {
+	return (
+		<div
+			style={{
+
+transform: 'translateX(-50px)',
+				position: 'absolute',
+				width: '1500px',
+				height: '720px',
+				background: '#10241c',
+			}}
+		/>
+	);
+};
+
 export const Blanco = () => {
 	return (
 		<div
@@ -96,6 +112,30 @@ export const Blanco = () => {
 				width: '1500px',
 				height: '720px',
 				background: '#ce1d2c',
+			}}
+		/>
+	);
+};
+
+export const BlancoCortina = () => {
+	return (
+		<div
+			style={{
+				width: '1500px',
+				height: '720px',
+				background: 'white',
+			}}
+		/>
+	);
+};
+
+export const BlancoFinal = () => {
+	return (
+		<div
+			style={{
+				width: '1500px',
+				height: '720px',
+				background: 'white',
 			}}
 		/>
 	);

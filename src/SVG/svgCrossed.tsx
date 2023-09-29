@@ -1,11 +1,8 @@
 import {evolvePath} from '@remotion/paths';
 import {
-	Sequence,
 	interpolate,
 	random,
-	spring,
 	useCurrentFrame,
-	useVideoConfig,
 } from 'remotion';
 
 export const SvgCrossed: React.FC<{
@@ -29,7 +26,11 @@ export const SvgCrossed: React.FC<{
 
 		`;
 
-	const progress = interpolate(frame, [0, 50], [0, 0.5]);
+	const progress = interpolate(frame, [0, 300], [0,1 ]);
+
+
+
+
 	const opacidad = interpolate(frame, [0, 25,26,50], [0.5, 1,1,0.5]);
 
 

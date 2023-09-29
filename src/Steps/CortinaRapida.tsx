@@ -30,7 +30,6 @@ export const CortinaAlCentro: React.FC = () => {
 					height: '720px',
 					width: '1280px',
 					position: 'absolute',
-
 					background: '#6089e4',
 					transform: `translateX(${-move}px)`,
 					opacity: `${opacity}`,

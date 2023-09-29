@@ -1,7 +1,7 @@
 import {Sequence} from 'remotion/.';
 
 import {CaidaDeCortinilla} from './CaidaDeCortinilla';
-import {CuentaGratis, Ovalo, Rojo, RojoBF, TextoBXF} from './Colors';
+import {BlancoCortina, CuentaGratis, Ovalo, Rojo, RojoBF, TextoBXF} from './Colors';
 import {Gris} from './Colors';
 import {Azul} from './Colors';
 import {Blanco} from './Colors';
@@ -33,7 +33,7 @@ export const CortinillaSalida = () => {
 			</Sequence>
 			<Sequence from={50}>
 				<CaidaDeCortinilla>
-					<Blanco />
+					<BlancoCortina />
 				</CaidaDeCortinilla>
 			</Sequence>
 			<Sequence from={70}>
