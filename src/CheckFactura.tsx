@@ -55,7 +55,7 @@ export const CheckFactura = () => {
 					}}
 				/>
 			</Sequence>
-			<Sequence from={200}>
+			<Sequence from={210}>
 				<Img
 					src={staticFile('CheckMark.png')}
 					style={{

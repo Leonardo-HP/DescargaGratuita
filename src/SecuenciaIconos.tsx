@@ -6,16 +6,16 @@ export const SecuenciaIconos = () => {
 	return (
 		<div>
 		
-			<Sequence durationInFrames={500}>
+			<Sequence durationInFrames={700}>
 				<Iconos1 />
 			</Sequence>
-			<Sequence from={100} durationInFrames={150}>
+			<Sequence from={200} durationInFrames={150}>
 				<Iconos2 />
 			</Sequence>
-			<Sequence from={200} durationInFrames={150}>
+			<Sequence from={300} durationInFrames={150}>
 				<Iconos3 />
 			</Sequence>
-			<Sequence from={300} durationInFrames={150}>
+			<Sequence from={400} durationInFrames={150}>
 				<Iconos4 />
 			</Sequence>
 

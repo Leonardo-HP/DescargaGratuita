@@ -13,10 +13,10 @@ export const SvgLine: React.FC<{
 	stroke: number;
 	seed: number;
 	color: string;
-
+duracionCaja: number;
 	x: number;
 	y: number;
-}> = ({color, ancho, largo, seed, stroke, x, y}) => {
+}> = ({color, ancho, largo, seed, stroke, x, y, duracionCaja}) => {
 	const random2 = Math.trunc(random(seed) * 10) - 5 + 10;
 	const random4 = Math.trunc(random(seed) * 10) - 5 + 10;
 
@@ -27,21 +27,16 @@ export const SvgLine: React.FC<{
 		M10,10    S30,${random2}          50,10     S70,${random4}    90,10  
 							
 		`;
-
-	let progress = 0;
-
-	if (seed >= 1 && seed <= 15) {
-		progress = interpolate(frame, [0, 30], [0, 1]);
-	} else {
-		progress = spring({
-			fps,
-			frame,
-			config: {
-				stiffness: 30,
-			},
-			durationInFrames: 50,
-		});
-	}
+	const duracion = duracionCaja / 4;
+	const progress = interpolate(
+		frame,
+		[0, duracion, duracion * 3, duracionCaja],
+		[0, 1, 1, 2],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
 
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 

@@ -6,7 +6,7 @@ import {
 	SvgLeo,
 	SvgLeoSub,
 } from './SvgLeo';
-import { TextoManchaMask } from './highlight.tsx/TextoManchaMask';
+import { TextoManchaMask } from './Manchas/TextoManchaMask';
 
 export const SvgFirma = () => {
 

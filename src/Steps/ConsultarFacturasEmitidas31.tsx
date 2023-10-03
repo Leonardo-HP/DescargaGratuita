@@ -14,9 +14,10 @@ import {SvgSharp} from '../SVG/svgSharp';
 import {SvgHighlighter} from '../SVG/svgHighlighter';
 import {SecuenciaIconos} from '../SecuenciaIconos';
 import {PopIcon} from '../highlight.tsx/PopIcon';
-import { SvgFlecha2 } from '../SVG/svgFlecha2';
-import { IconBXF2 } from '../highlight.tsx/LogosBXF2';
-import { IconBXFTexto } from '../highlight.tsx/LogosBXFTexto';
+import {SvgFlecha2} from '../SVG/svgFlecha2';
+import {IconBXF2} from '../highlight.tsx/LogosBXF2';
+import {IconBXFTexto} from '../highlight.tsx/LogosBXFTexto';
+import {TextoManchaMask} from '../Manchas/TextoManchaMask';
 
 export const ConsultarFacturasEmitidas3 = () => {
 	const frame = useCurrentFrame();
@@ -46,7 +47,7 @@ export const ConsultarFacturasEmitidas3 = () => {
 
 	const escalaIconos = interpolate(
 		frame,
-		[1850, 1900, 2200, 2250],
+		[2000, 2100, 2550, 2600],
 		[0.156, 1, 1, 0.156],
 		{
 			extrapolateLeft: 'clamp',
@@ -56,7 +57,7 @@ export const ConsultarFacturasEmitidas3 = () => {
 
 	const movimientoIconosX = interpolate(
 		frame,
-		[1850, 1900, 2200, 2250],
+		[2000, 2100, 2550, 2600],
 		[116, 350, 350, 116],
 		{
 			extrapolateLeft: 'clamp',
@@ -66,7 +67,7 @@ export const ConsultarFacturasEmitidas3 = () => {
 
 	const movimientoIconosY = interpolate(
 		frame,
-		[1850, 1900, 2200, 2250],
+		[2000, 2100, 2550, 2600],
 		[-203, 50, 50, -203],
 		{
 			extrapolateLeft: 'clamp',
@@ -78,43 +79,81 @@ export const ConsultarFacturasEmitidas3 = () => {
 		<div>
 			<SecuenciaConsultar />
 
-
-
-
-			<Sequence from={1550} durationInFrames={100}>
+			<Sequence from={1750} durationInFrames={200}>
 				<div
 					style={{
 						transform: `translateX(100px) translateY(81px)`,
 					}}
 				>
-					<SvgCirculo ancho={120} largo={70} stroke={3} seed={1} />
-
+					<SvgCirculo
+						ancho={120}
+						largo={70}
+						stroke={3}
+						seed={1}
+						duracionCaja={200}
+					/>
 				</div>
-			
+
 				<div
 					style={{
 						transform: `translateX(-190px) translateY(-330px) rotate(120deg)`,
 					}}
 				>
-					<SvgFlecha2 ancho={150} largo={150} stroke={1} seed={2} color='red' duracion={50} />
+					<SvgFlecha2
+						ancho={150}
+						largo={150}
+						stroke={3}
+						seed={2}
+						color="red"
+						duracion={100}
+					/>
 				</div>
-
 			</Sequence>
-	
 
+			<Sequence from={1550} durationInFrames={200}>
+				<div
+					style={{
+						transform: 'translateX(400px) translateY(450px)',
+					}}
+				>
+					<TextoManchaMask
+						duracionCaja={200}
+						altura={400}
+						ancho={400}
+						seed={7}
+						x={20}
+						y={10}
+						fontSize={13}
+						children1="Aqui aparecera"
+						children2="el listado de"
+						children3="facturas."
+					/>
+				</div>
+			</Sequence>
 
+			<Sequence from={1750} durationInFrames={200}>
+				<div
+					style={{
+						transform: 'translateX(350px) translateY(200px)',
+					}}
+				>
+					<TextoManchaMask
+						duracionCaja={200}
+						altura={400}
+						ancho={400}
+						seed={10}
+						x={12}
+						y={7}
+						fontSize={12}
+						children1="Estas son las"
+						children2="opciones de  "
+						children3="descarga individual."
+					/>
+				</div>
+			</Sequence>
 
-
-
-
-
-
-	
-
-	
-
-			<Sequence from={1800}>
-			<SombraIndividual />
+			<Sequence from={2000}>
+				<SombraIndividual />
 				<div
 					style={{
 						transform: `translateX(${movimientoIconosX}px) translateY(${movimientoIconosY}px) scale(${escalaIconos})`,
@@ -123,13 +162,12 @@ export const ConsultarFacturasEmitidas3 = () => {
 					<SecuenciaIconos />
 				</div>
 
-
-				<Sequence from={100} durationInFrames={400}>
+				<Sequence from={200} durationInFrames={400}>
 					<PopIcon
 						positionX={-60}
 						positionY={140}
 						rotacion={0}
-						duracionCaja={300}
+						duracionCaja={350}
 						size={500}
 						texto="Ver detalles de la factura"
 						imagenX={0}
@@ -138,12 +176,12 @@ export const ConsultarFacturasEmitidas3 = () => {
 					/>
 				</Sequence>
 
-				<Sequence from={200} durationInFrames={400}>
+				<Sequence from={300} durationInFrames={400}>
 					<PopIcon
 						positionX={400}
 						positionY={250}
 						rotacion={0}
-						duracionCaja={200}
+						duracionCaja={250}
 						size={500}
 						texto="Descargar la factura"
 						imagenX={5}
@@ -152,12 +190,12 @@ export const ConsultarFacturasEmitidas3 = () => {
 					/>
 				</Sequence>
 
-				<Sequence from={300} durationInFrames={400}>
+				<Sequence from={400} durationInFrames={400}>
 					<PopIcon
 						positionX={830}
 						positionY={140}
 						rotacion={0}
-						duracionCaja={100}
+						duracionCaja={150}
 						size={500}
 						texto="Rcuperar representacion impresa"
 						imagenX={0}
@@ -167,44 +205,77 @@ export const ConsultarFacturasEmitidas3 = () => {
 				</Sequence>
 			</Sequence>
 
+			<Sequence from={2700}>
+				<SecuenciaConsultar2 />
+			</Sequence>
 
-
-
-				<Sequence from={2700}>
-					<SecuenciaConsultar2 />
-				</Sequence>
-
-
-
-				<Sequence from={100} durationInFrames={300}>
-					<IconBXFTexto2
-						positionX={700}
-						positionY={0}
-						rotacion={150}
-						duracionCaja={30}
-						size={500}
-						texto="Seleccionamos"
-						imagenX={0}
-						imagenY={0}
-						fuenteSize={35}
-						duracionCajaCompleta={150}
+			<Sequence from={100} durationInFrames={300}>
+				<div style={{transform: 'translateX(700px) translateY(200px)'}}>
+					<TextoManchaMask
+						duracionCaja={300}
+						altura={400}
+						ancho={400}
+						seed={6}
+						x={14}
+						y={18}
+						fontSize={10}
+						children1="Seleccionamos la "
+						children2="fecha inicial y la fecha"
+						children3=" final de emision"
 					/>
-				</Sequence>
+				</div>
+			</Sequence>
 
-				<Sequence from={150} durationInFrames={100}>
+			<Sequence from={150} durationInFrames={200}>
+				<div
+					style={{
+						transform: ' translateX(48px) translateY(460px)',
+					}}
+				>
+					<SvgCirculo
+						ancho={55}
+						largo={65}
+						seed={1}
+						stroke={4}
+						duracionCaja={200}
+					/>
+				</div>
+			</Sequence>
+
+			<Sequence from={150} durationInFrames={200}>
+				<div
+					style={{
+						transform: `translateX(${xFllecha1}px) translateY(${yFlecha1}px) rotate(45deg)`,
+					}}
+				>
+					<SvgFlecha
+						ancho={200}
+						largo={200}
+						seed={1}
+						stroke={1}
+						color="red"
+						duracionCaja={200}
+					/>
+				</div>
+			</Sequence>
+
+			<Sequence from={250} durationInFrames={450}>
+				<CompCursorAll
+					positionX={85}
+					positionY={150}
+					empiezaX={1300}
+					empiezaY={400}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
+
+			<Sequence from={500}>
+				<Sequence durationInFrames={200}>
 					<div
 						style={{
-							transform: ' translateX(48px) translateY(460px)',
-						}}
-					>
-						<SvgCirculo ancho={55} largo={65} seed={1} stroke={4} />
-					</div>
-				</Sequence>
-
-				<Sequence from={150} durationInFrames={200}>
-					<div
-						style={{
-							transform: `translateX(${xFllecha1}px) translateY(${yFlecha1}px) rotate(45deg)`,
+							transform: `translateX(540px) translateY(${yFlecha2}px) `,
 						}}
 					>
 						<SvgFlecha
@@ -213,372 +284,429 @@ export const ConsultarFacturasEmitidas3 = () => {
 							seed={1}
 							stroke={1}
 							color="red"
+							duracionCaja={200}
 						/>
 					</div>
 				</Sequence>
 
-				<Sequence from={250} durationInFrames={450}>
-					<CompCursorAll
-						positionX={85}
-						positionY={150}
-						empiezaX={1300}
-						empiezaY={400}
-						duracion={80}
+				<Sequence durationInFrames={200}>
+					<div
+						style={{
+							transform: ' translateX(584px) translateY(254px)',
+						}}
 					>
-						<Cursor />
-					</CompCursorAll>
+						<SvgSharp
+							ancho={80}
+							largo={80}
+							stroke={4}
+							seed={1}
+							color="red"
+							x={0}
+							y={0}
+							duracionCaja={200}
+						/>
+					</div>
 				</Sequence>
 
-				<Sequence from={500}>
-					<Sequence durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(540px) translateY(${yFlecha2}px) `,
-							}}
-						>
-							<SvgFlecha
-								ancho={200}
-								largo={200}
-								seed={1}
-								stroke={1}
-								color="red"
-							/>
-						</div>
-					</Sequence>
-
-					<Sequence durationInFrames={100}>
-						<div
-							style={{
-								transform: ' translateX(584px) translateY(254px)',
-							}}
-						>
-							<SvgSharp
-								ancho={80}
-								largo={80}
-								stroke={4}
-								seed={1}
-								color="red"
-								x={0}
-								y={0}
-							/>
-						</div>
-					</Sequence>
-
-					<Sequence from={100} durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(1115px) translateY(${yFlecha3}px) `,
-							}}
-						>
-							<SvgFlecha
-								ancho={200}
-								largo={200}
-								seed={2}
-								stroke={1}
-								color="red"
-							/>
-						</div>
-					</Sequence>
-
-					<Sequence from={100} durationInFrames={100}>
-						<div
-							style={{
-								transform: ' translateX(1165px) translateY(255px)',
-							}}
-						>
-							<SvgSharp
-								ancho={80}
-								largo={80}
-								stroke={4}
-								seed={3}
-								color="red"
-								x={0}
-								y={0}
-							/>
-						</div>
-					</Sequence>
+				<Sequence from={100} durationInFrames={200}>
+					<div
+						style={{
+							transform: `translateX(1115px) translateY(${yFlecha3}px) `,
+						}}
+					>
+						<SvgFlecha
+							ancho={200}
+							largo={200}
+							seed={2}
+							stroke={1}
+							color="red"
+							duracionCaja={200}
+						/>
+					</div>
 				</Sequence>
 
-				<Sequence from={450} durationInFrames={200}>
-					<IconBXFTexto2
-						positionX={650}
-						positionY={270}
-						rotacion={20}
-						duracionCaja={30}
-						size={550}
-						texto="Seleccionamos las fechas que necesitamos descargar"
-						imagenX={10}
-						imagenY={20}
-						fuenteSize={30}
-						duracionCajaCompleta={150}
+				<Sequence from={100} durationInFrames={200}>
+					<div
+						style={{
+							transform: ' translateX(1165px) translateY(255px)',
+						}}
+					>
+						<SvgSharp
+							ancho={80}
+							largo={80}
+							stroke={4}
+							seed={3}
+							color="red"
+							x={0}
+							y={0}
+							duracionCaja={200}
+						/>
+					</div>
+				</Sequence>
+			</Sequence>
+
+			<Sequence from={450} durationInFrames={400}>
+				<div style={{transform: 'translateX(650px) translateY(380px)'}}>
+					<TextoManchaMask
+						duracionCaja={400}
+						altura={450}
+						ancho={450}
+						seed={7}
+						x={15}
+						y={19}
+						fontSize={10}
+						children1="Podemos usar los"
+						children2="iconos de calendario"
+						children3={undefined}
 					/>
-				</Sequence>
+				</div>
+			</Sequence>
 
-				<Sequence from={700} durationInFrames={200}>
-					<CompCursorAll
-						positionX={630}
-						positionY={-50}
-						empiezaX={80}
-						empiezaY={150}
-						duracion={80}
-					>
-						<Cursor />
-					</CompCursorAll>
-				</Sequence>
+			<Sequence from={700} durationInFrames={200}>
+				<CompCursorAll
+					positionX={630}
+					positionY={-50}
+					empiezaX={80}
+					empiezaY={150}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-				<Sequence from={900} durationInFrames={100}>
-					<CompCursorAll
-						positionX={230}
-						positionY={60}
-						empiezaX={630}
-						empiezaY={-50}
-						duracion={80}
-					>
-						<Cursor />
-					</CompCursorAll>
-				</Sequence>
+			<Sequence from={900} durationInFrames={100}>
+				<CompCursorAll
+					positionX={230}
+					positionY={60}
+					empiezaX={630}
+					empiezaY={-50}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-				<Sequence from={1000} durationInFrames={100}>
-					<CompCursorAll
-						positionX={1220}
-						positionY={-50}
-						empiezaX={230}
-						empiezaY={60}
-						duracion={80}
-					>
-						<Cursor />
-					</CompCursorAll>
-				</Sequence>
+			<Sequence from={1000} durationInFrames={100}>
+				<CompCursorAll
+					positionX={1220}
+					positionY={-50}
+					empiezaX={230}
+					empiezaY={60}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-				<Sequence from={1100} durationInFrames={110}>
-					<CompCursorAll
-						positionX={1030}
-						positionY={180}
-						empiezaX={1220}
-						empiezaY={-50}
-						duracion={80}
-					>
-						<Cursor />
-					</CompCursorAll>
-				</Sequence>
+			<Sequence from={1100} durationInFrames={110}>
+				<CompCursorAll
+					positionX={1030}
+					positionY={180}
+					empiezaX={1220}
+					empiezaY={-50}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-				<Sequence from={1210} durationInFrames={700}>
-					<CompCursorAll
-						positionX={1200}
-						positionY={320}
-						empiezaX={1030}
-						empiezaY={180}
-						duracion={80}
-					>
-						<Cursor />
-					</CompCursorAll>
-				</Sequence>
+			<Sequence from={1210} durationInFrames={700}>
+				<CompCursorAll
+					positionX={1200}
+					positionY={320}
+					empiezaX={1030}
+					empiezaY={180}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-				<Sequence from={1500} durationInFrames={60}>
-					<Lineas />
-				</Sequence>
+			<Sequence from={1500} durationInFrames={60}>
+				<Lineas />
+			</Sequence>
 
-					<Sequence from={2800} durationInFrames={100}>
-						<Cuadritos />
-					</Sequence>
+			<Sequence from={2700} durationInFrames={100}>
+				<Cuadritos />
+			</Sequence>
 
-					<Sequence from={2990} durationInFrames={530}>
-						<CheckFactura />
-					</Sequence>
+			<Sequence from={2600} durationInFrames={600}>
+				<div style={{transform: 'translateX(650px) translateY(380px)'}}>
+					<TextoManchaMask
+						duracionCaja={600}
+						altura={450}
+						ancho={450}
+						seed={12}
+						x={10}
+						y={14}
+						fontSize={10}
+						children1="Tambien podemos"
+						children2="seleccionar multiples"
+						children3="facturas"
+					/>
+				</div>
+			</Sequence>
 
-					<Sequence from={3310} durationInFrames={100}>
-						<Cuadrito />
-					</Sequence>
+			<Sequence from={3050} durationInFrames={530}>
+				<CheckFactura />
+			</Sequence>
 
-					<Sequence from={2910} durationInFrames={80}>
-						<CompCursorAll
-							positionX={80}
-							positionY={-220}
-							empiezaX={1200}
-							empiezaY={320}
-							duracion={80}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3350} durationInFrames={200}>
+				<Cuadrito />
+			</Sequence>
 
-					<Sequence from={2990} durationInFrames={40}>
-						<CompCursorAll
-							positionX={80}
-							positionY={-127}
-							empiezaX={80}
-							empiezaY={-220}
-							duracion={40}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3350} durationInFrames={200}>
+			<div style={{transform: 'translateX(650px) translateY(380px)'}}>
+					<TextoManchaMask
+						duracionCaja={600}
+						altura={450}
+						ancho={450}
+						seed={13}
+						x={14}
+						y={14}
+						fontSize={10}
+						children1="O podemos seleccionar"
+						children2="todas las facturas en"
+						children3="la lista"
+					/>
+				</div>
+			</Sequence>
 
-					<Sequence from={3030} durationInFrames={40}>
-						<CompCursorAll
-							positionX={80}
-							positionY={-4}
-							empiezaX={80}
-							empiezaY={-127}
-							duracion={40}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={2950} durationInFrames={100}>
+				<CompCursorAll
+					positionX={80}
+					positionY={-220}
+					empiezaX={1200}
+					empiezaY={320}
+					duracion={80}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3070} durationInFrames={40}>
-						<CompCursorAll
-							positionX={80}
-							positionY={75}
-							empiezaX={80}
-							empiezaY={-4}
-							duracion={40}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3050} durationInFrames={40}>
+				<CompCursorAll
+					positionX={80}
+					positionY={-127}
+					empiezaX={80}
+					empiezaY={-220}
+					duracion={40}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3110} durationInFrames={40}>
-						<CompCursorAll
-							positionX={80}
-							positionY={125}
-							empiezaX={80}
-							empiezaY={75}
-							duracion={40}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3090} durationInFrames={40}>
+				<CompCursorAll
+					positionX={80}
+					positionY={-4}
+					empiezaX={80}
+					empiezaY={-127}
+					duracion={40}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3150} durationInFrames={260}>
-						<CompCursorAll
-							positionX={80}
-							positionY={270}
-							empiezaX={80}
-							empiezaY={125}
-							duracion={40}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3130} durationInFrames={40}>
+				<CompCursorAll
+					positionX={80}
+					positionY={75}
+					empiezaX={80}
+					empiezaY={-4}
+					duracion={40}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3410} durationInFrames={520}>
-						<CompCursorAll
-							positionX={80}
-							positionY={-300}
-							empiezaX={80}
-							empiezaY={270}
-							duracion={100}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={3170} durationInFrames={40}>
+				<CompCursorAll
+					positionX={80}
+					positionY={125}
+					empiezaX={80}
+					empiezaY={75}
+					duracion={40}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3710} durationInFrames={100}>
-						<div
-							style={{
-								transform: 'translateX(230px) translateY(550px)',
-							}}
-						>
-							<SvgCirculo ancho={310} largo={110} stroke={2} seed={1} />
-						</div>
-					</Sequence>
+			<Sequence from={3210} durationInFrames={260}>
+				<CompCursorAll
+					positionX={80}
+					positionY={270}
+					empiezaX={80}
+					empiezaY={125}
+					duracion={40}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3710} durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(350px) translateY(360px) rotate(-30deg)`,
-							}}
-						>
-							<SvgFlecha
-								ancho={200}
-								largo={200}
-								seed={1}
-								stroke={1}
-								color="red"
-							/>
-						</div>
-					</Sequence>
+			<Sequence from={3470} durationInFrames={461}>
+				<CompCursorAll
+					positionX={80}
+					positionY={-300}
+					empiezaX={80}
+					empiezaY={270}
+					duracion={100}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 
-					<Sequence from={3710} durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(350px) translateY(360px) rotate(-30deg)`,
-							}}
-						>
-							<SvgFlecha
-								ancho={200}
-								largo={200}
-								seed={1}
-								stroke={1}
-								color="red"
-							/>
-						</div>
-					</Sequence>
+			<Sequence from={3770} durationInFrames={200}>
+				<div
+					style={{
+						transform: 'translateX(230px) translateY(550px)',
+					}}
+				>
+					<SvgCirculo
+						ancho={310}
+						largo={110}
+						stroke={2}
+						seed={1}
+						duracionCaja={100}
+					/>
+				</div>
+			</Sequence>
 
-					<Sequence from={4220} durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(925px) translateY(353px) `,
-							}}
-						>
-							<SvgHighlighter ancho={300} largo={200} seed={0} />
-						</div>
-					</Sequence>
+			<Sequence from={3770} durationInFrames={200}>
+				<div
+					style={{
+						transform: `translateX(350px) translateY(360px) rotate(-30deg)`,
+					}}
+				>
+					<SvgFlecha
+						ancho={200}
+						largo={200}
+						seed={5}
+						stroke={3}
+						color="red"
+						duracionCaja={100}
+					/>
+				</div>
+			</Sequence>
 
-					<Sequence from={4250} durationInFrames={200}>
-						<div
-							style={{
-								transform: `translateX(326px) translateY(381px) `,
-							}}
-						>
-							<SvgHighlighter ancho={280} largo={200} seed={0} />
-						</div>
-					</Sequence>
 
-					<Sequence from={4650} durationInFrames={200}>
-						<Sombra />
-					</Sequence>
+			<Sequence from={4250} durationInFrames={300}>
+				<div
+					style={{
+						transform: `translateX(925px) translateY(353px) `,
+					}}
+				>
+					<SvgHighlighter ancho={300} largo={200} seed={0} duracionCaja={300} />
+				</div>
+			</Sequence>
 
-					<Sequence from={3930} durationInFrames={1300}>
-						<CompCursorAll
-							positionX={450}
-							positionY={270}
-							empiezaX={80}
-							empiezaY={-300}
-							duracion={50}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={4300} durationInFrames={300}>
+				<div
+					style={{
+						transform: `translateX(326px) translateY(381px) `,
+					}}
+				>
+					<SvgHighlighter ancho={280} largo={200} seed={0} duracionCaja={300} />
+				</div>
+			</Sequence>
 
-					<Sequence from={5230} durationInFrames={200}>
-						<CompCursorAll
-							positionX={950}
-							positionY={-270}
-							empiezaX={450}
-							empiezaY={270}
-							duracion={100}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
+			<Sequence from={4650} durationInFrames={300}>
+				<Sombra />
+			</Sequence>
 
-					<Sequence from={5430} durationInFrames={1300}>
-						<CompCursorAll
-							positionX={950}
-							positionY={-230}
-							empiezaX={950}
-							empiezaY={-270}
-							duracion={50}
-						>
-							<Cursor />
-						</CompCursorAll>
-					</Sequence>
-		
 
+			<Sequence from={4200} durationInFrames={500}>
+			<div style={{transform: 'translateX(0px) translateY(50px)'}}>
+					<TextoManchaMask
+						duracionCaja={500}
+						altura={450}
+						ancho={450}
+						seed={15}
+						x={14}
+						y={14}
+						fontSize={10}
+						children1="Este es el codigo de"
+						children2="referencia para hacer"
+						children3="tu descarga"
+					/>
+				</div>
+			</Sequence>
+
+			<Sequence from={4600} durationInFrames={6500}>
+			<div style={{transform: 'translateX(800px) translateY(450px)'}}>
+					<TextoManchaMask
+						duracionCaja={500}
+						altura={450}
+						ancho={450}
+						seed={18}
+						x={14}
+						y={14}
+						fontSize={10}
+						children1="Es necesario anotarlo"
+						children2="para el siguiente paso"
+						children3="en tu descarga"
+					/>
+				</div>
+			</Sequence>
+
+			
+
+			<Sequence from={5100} durationInFrames={6500}>
+			<div style={{transform: 'translateX(0px) translateY(100px)'}}>
+					<TextoManchaMask
+						duracionCaja={500}
+						altura={450}
+						ancho={450}
+						seed={21}
+						x={14}
+						y={14}
+						fontSize={10}
+						children1="Regresamos al menu "
+						children2="de servicios de"
+						children3="factura"
+					/>
+				</div>
+			</Sequence>
+
+
+
+
+
+			<Sequence from={3930} durationInFrames={1300}>
+				<CompCursorAll
+					positionX={450}
+					positionY={270}
+					empiezaX={80}
+					empiezaY={-300}
+					duracion={50}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
+
+			<Sequence from={5230} durationInFrames={200}>
+				<CompCursorAll
+					positionX={950}
+					positionY={-270}
+					empiezaX={450}
+					empiezaY={270}
+					duracion={100}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
+
+			<Sequence from={5430} durationInFrames={1300}>
+				<CompCursorAll
+					positionX={950}
+					positionY={-230}
+					empiezaX={950}
+					empiezaY={-270}
+					duracion={50}
+				>
+					<Cursor />
+				</CompCursorAll>
+			</Sequence>
 		</div>
-
-
 	);
 };

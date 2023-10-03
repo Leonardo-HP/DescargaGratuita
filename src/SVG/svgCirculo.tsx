@@ -6,7 +6,8 @@ export const SvgCirculo: React.FC<{
 	largo: number;
 	stroke: number;
 	seed: number;
-}> = ({ancho,stroke, largo, seed}) => {
+	duracionCaja: number ;
+}> = ({ancho,stroke, largo, seed, duracionCaja}) => {
 	const random1 = Math.trunc(random(seed + 1) * 10) - 5 + 10;
 	const random2 = Math.trunc(random(seed + 2) * 10) - 5 + 10;
 	const random3 = Math.trunc(random(seed + 3) * 10) - 5 + 10;
@@ -61,25 +62,20 @@ export const SvgCirculo: React.FC<{
 		M10,50    C${random1},${random4} ${random7},${random10}  ${random13},${random16}   C${random19},${random22} ${random25},${random28} ${random31},${random34}
               C${random2},${random5} ${random8},${random11}  ${random14},${random17}   C${random20},${random23} ${random26},${random29} ${random32},${random35}
               C${random3},${random6} ${random9},${random12}  ${random15},${random18}   C${random21},${random24} ${random27},${random30} ${random33},${random36}
-
-
-    
 		`;
 
-	let progress = 0;
+		const duracion = duracionCaja / 4;
 
-	if (seed >= 1 && seed <= 3 ) {
-		progress = interpolate(frame, [0, 50], [0, 1]);
-	} else {
-		progress = spring({
-			fps,
+		const progress = interpolate(
 			frame,
-			config: {
-				stiffness: 30,
-			},
-			durationInFrames: 50,
-		});
-	}
+			[0, duracion, duracion * 3, duracionCaja],
+			[0, 1, 1, 2],
+			{
+				extrapolateLeft: 'clamp',
+				extrapolateRight: 'clamp',
+			}
+		);
+
 
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 
@@ -93,6 +89,7 @@ export const SvgCirculo: React.FC<{
 				preserveAspectRatio="none"
 				width={ancho}
 				height={largo}
+				strokeLinecap="round"
 			>
 				<path
 					strokeDasharray={strokeDasharray}

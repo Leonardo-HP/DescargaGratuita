@@ -145,7 +145,10 @@ export const ScreenshotConsultarFacturas13 = () => {
 	return (
 		<div
 			style={{
-				transform: `scale(0.34) translateX(-6600px) translateY(-8400px)`,
+				transform: `scale(0.34) translateX(-6600px) translateY(-8400px)
+				
+			`,
+			position:'absolute'
 			}}
 		>
 			<Img src={staticFile('ScreenshotConsultarFacturas13.png')} />

@@ -10,6 +10,7 @@ import { SvgFirma } from './SvgFirma';
 import { ServiciosDeFactura4 } from './Steps/ServiciosDeFactura4';
 import { CortinaIkea } from './CortinaIkea';
 import { Final } from './Final';
+import { RecuperarCFDI } from './Recuperar';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -18,7 +19,7 @@ export const RemotionRoot: React.FC = () => {
 						<Composition
 				id="Final"
 				component={Final}
-				durationInFrames={9998}
+				durationInFrames={11000}
 				fps={60}
 				width={1280}
 				height={720}
@@ -41,9 +42,9 @@ export const RemotionRoot: React.FC = () => {
 			/>
 
 			<Composition
-				id="Login1"
-				component={Login1}
-				durationInFrames={700}
+				id="recuperar"
+				component={RecuperarCFDI}
+				durationInFrames={2000}
 				fps={60}
 				width={1280}
 				height={720}

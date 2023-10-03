@@ -12,8 +12,9 @@ export const SvgFlecha: React.FC<{
 	largo: number;
 	stroke: number;
 	seed: number;
-		color: string;
-}> = ({color,ancho, largo, seed, stroke}) => {
+	duracionCaja: number;
+ color: string;
+}> = ({color,ancho, largo, seed, stroke, duracionCaja}) => {
 	const random1 = Math.trunc(random( seed + 1) * 10) - 5 + 50;
 	const random2 = Math.trunc(random( seed + 2) * 10) - 5 + 60;
 	const random3 = Math.trunc(random( seed + 3) * 10) - 5 + 70;
@@ -111,20 +112,22 @@ export const SvgFlecha: React.FC<{
 
 		`;
 
-	let progress = 0;
 
-	if (seed >= 1 && seed <= 3  ) {
-		progress = interpolate(frame, [0, 100], [0, 1]);
-	} else {
-		progress = spring({
-			fps,
+		const duracion = duracionCaja / 4;
+
+		const progress = interpolate(
 			frame,
-			config: {
-				stiffness: 30,
-			},
-			durationInFrames: 50,
-		});
-	}
+			[0, duracion, duracion * 3, duracionCaja],
+			[0, 1, 1, 0],
+			{
+				extrapolateLeft: 'clamp',
+				extrapolateRight: 'clamp',
+			}
+		);
+
+
+	
+
 
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 
@@ -132,6 +135,7 @@ export const SvgFlecha: React.FC<{
 		<div
 			style={{
 				filter: 'drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5))',
+				position:'absolute'
 			}}
 		>
 			<svg

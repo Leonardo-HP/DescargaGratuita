@@ -2,6 +2,7 @@ import {loadFont} from '@remotion/google-fonts/Oswald';
 import {evolvePath} from '@remotion/paths';
 import {useState} from 'react';
 import {
+	AbsoluteFill,
 	delayRender,
 	interpolate,
 	random,
@@ -18,10 +19,21 @@ export const TextoManchaMask: React.FC<{
 	x: number;
 	y: number;
 	fontSize: number;
-	children: React.ReactNode;
-	delay: number;
-
-}> = ({duracionCaja, altura, ancho, seed, children, x, y, fontSize, delay}) => {
+	children1: React.ReactNode;
+	children2: React.ReactNode;
+	children3: React.ReactNode;
+}> = ({
+	duracionCaja,
+	altura,
+	ancho,
+	seed,
+	children1,
+	children2,
+	children3,
+	x,
+	y,
+	fontSize,
+}) => {
 	const duracion = duracionCaja / 4;
 
 	const frame = useCurrentFrame();
@@ -39,65 +51,15 @@ export const TextoManchaMask: React.FC<{
 	const random9 = Math.trunc(random(seedx + 9) * 10) - 5 + 50;
 	const random10 = Math.trunc(random(seedx + 10) * 10) - 5 + 60;
 
-	//
-
-	/*	const randomX = [
+	const progress = interpolate(
+		frame,
+		[0, duracion, duracion * 3, duracionCaja],
+		[0, 1, 1, 0],
 		{
-			key: 1,
-			valor: [12, 24, 35, 44, 59, 17, 32, 38, 46, 56],
-		},
-		{
-			key: 2,
-			valor: [14, 25, 34, 49, 52, 22, 28, 36, 46, 58],
-		},
-		{
-			key: 3,
-			valor: [15, 24, 39, 42, 57, 18, 26, 36, 48, 56],
-		},
-		{
-			key: 4,
-			valor: [14, 29, 32, 47, 53, 16, 26, 38, 46, 63],
-		},
-
-		{
-			key: 5,
-			valor: [19, 22, 37, 43, 51, 16, 28, 36, 53, 55],
-		},
-
-		{
-			key: 6,
-			valor: [12, 27, 33, 41, 51, 18, 26, 43, 45, 61],
-		},
-
-		{
-			key: 7,
-			valor: [17, 23, 31, 41, 53, 16, 33, 35, 51, 60],
-		},
-		{
-			key: 8,
-			valor: [13, 21, 31, 43, 51, 23, 25, 51, 50, 62],
-		},
-
-		{
-			key: 9,
-			valor: [11, 21, 33, 41, 58, 15, 31, 40, 52, 59],
-		},
-
-		{
-			key: 10,
-			valor: [11, 23, 31, 48, 50, 21, 30, 42, 49, 62],
-		},
-
-
-			const a = randomX.find((a) => a.key === seed);
-	const b = a?.valor[0];
-	
-	]; */
-
-	const progress = interpolate(frame, [0, 50, 150, 200], [0, 1, 1, 0], {
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
 
 	/* Random */
 
@@ -108,6 +70,11 @@ export const TextoManchaMask: React.FC<{
            S30, ${random4} 10,${random9}
            S70, ${random5} 90,${random10}
   `;
+
+	const mask = `Mask${random1}`;
+	const maskUrl = `url(#${mask})`;
+	const X = `${x}px`;
+	const Y = `${y}px`;
 
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 
@@ -126,7 +93,7 @@ export const TextoManchaMask: React.FC<{
 				width={ancho}
 				height={altura}
 			>
-				<mask id="myMask">
+				<mask id={mask}>
 					<path
 						d={d}
 						strokeDasharray={strokeDasharray}
@@ -138,19 +105,29 @@ export const TextoManchaMask: React.FC<{
 					/>
 				</mask>
 
-				<circle cx="50" cy="50" r="100" fill="#CC1E2C" mask="url(#myMask)" />
+				<circle cx="50" cy="50" r="100" fill="#CC1E2C" mask={maskUrl} />
 
 				<text
-					x={x}
-					y={y}
+					x={X}
+					y={Y}
 					font-family={fontFamily}
 					fontSize={fontSize}
 					fill="white"
-					mask="url(#myMask)"
+					mask={maskUrl}
 				>
-					{children}
+					<tspan x={X} dy="1.2em">
+						{children1}
+					</tspan>
+					<tspan x={X} dy="1.2em">
+						{children2}
+					</tspan>
+					<tspan x={X} dy="1.2em">
+						{children3}
+					</tspan>
 				</text>
 			</svg>
+
+
 		</div>
 	);
 };

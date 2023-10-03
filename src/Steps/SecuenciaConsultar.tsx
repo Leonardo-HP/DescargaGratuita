@@ -17,7 +17,7 @@ import { SvgFlecha } from '../SVG/svgFlecha';
 export const SecuenciaConsultar = () => {
 	const frame = useCurrentFrame();
 
-	const y1 = interpolate(frame, [350, 400], [0, -240], {
+	const y1 = interpolate(frame, [400, 450], [0, -240], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -146,7 +146,7 @@ export const SecuenciaConsultar = () => {
 				<div style={{
 					transform: `translateX(500px) translateY(500px)`
 				}}>
-					<SvgFlecha ancho={300} largo={300} seed={5} stroke={1} color="red" />
+					<SvgFlecha ancho={300} largo={300} seed={5} stroke={1} color="red" duracionCaja={100} />
 				</div>
 
 				</div>

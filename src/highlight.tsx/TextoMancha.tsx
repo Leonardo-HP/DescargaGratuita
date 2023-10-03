@@ -10,7 +10,7 @@ import {
 	useVideoConfig,
 } from 'remotion';
 import {SequenceManagerProvider} from 'remotion/dist/cjs/SequenceManager';
-import { TextoManchaMask } from './TextoManchaMask';
+import { TextoManchaMask } from '../Manchas/TextoManchaMask';
 
 
 
@@ -19,7 +19,7 @@ export const TextoMancha = () => {
 
 	return (
 		<div>
-<TextoManchaMask duracionCaja={50} altura={200} ancho={200} seed={1} x={0} y={0} fontSize={30}  delay={0}>
+<TextoManchaMask duracionCaja={50} altura={200} ancho={200} seed={1} x={0} y={0} fontSize={30} >
 
 	hola
 </TextoManchaMask>

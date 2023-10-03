@@ -140,6 +140,7 @@ export const SvgFlecha2: React.FC<{
 				preserveAspectRatio="none"
 				width={ancho}
 				height={largo}
+						strokeLinecap="round"
 			>
 				<path
 					strokeDasharray={strokeDasharray}

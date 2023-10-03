@@ -5,6 +5,7 @@ import {CursorServicios1} from '../CompCursorClick/CompCursor/CursorCustom';
 import {CompClick2} from '../CompCursorClick/CompClick/CompClick2';
 import {ScreenShot2} from '../ScreenShots/Screenshot2';
 import { SvgCirculo } from '../SVG/svgCirculo';
+import { TextoManchaMask } from '../Manchas/TextoManchaMask';
 
 export const ServiciosDeFactura2 = () => {
 	return (
@@ -35,35 +36,41 @@ export const ServiciosDeFactura2 = () => {
 					</CompCursorAll>
 				</Sequence>
 
-				<IconBXFTexto2
-					positionX={600}
-					positionY={140}
-					rotacion={140}
-					duracionCaja={30}
-					size={590}
-					texto="Seleccionamos el tipo de facturas que necesitamos descargar."
-					imagenX={-10}
-					imagenY={50}
-					fuenteSize={28}
-					duracionCajaCompleta={150}
-				/>
+	
 
-				<Sequence from={30} durationInFrames={100}>
+
+<div style={{transform: 'translateX(600px) translateY(250px)'}}>
+						<TextoManchaMask
+							duracionCaja={300}
+							altura={500}
+							ancho={500}
+							seed={4}
+							x={10}
+							y={10}
+							fontSize={10}
+							children1='Seleccionamos el tipo '
+							children2='de facturas que  '
+							children3='necesitamos descargar.'
+						/>
+					</div>
+
+
+				<Sequence from={30} durationInFrames={200}>
 						<div
 							style={{
 								transform: 'translateX(25px) translateY(390px)',
 							}}
 						>
-							<SvgCirculo ancho={400} largo={70} seed={2} stroke={1} />
+							<SvgCirculo ancho={400} largo={70} seed={2} stroke={1} duracionCaja={200} />
 						</div>
 						</Sequence>
-						<Sequence from={40} durationInFrames={100}>
+						<Sequence from={40} durationInFrames={200}>
 							<div
 								style={{
 									transform: 'translateX(24px) translateY(425px)',
 								}}
 							>
-								<SvgCirculo ancho={400} largo={70} seed={3} stroke={1} />
+								<SvgCirculo ancho={400} largo={70} seed={3} stroke={1} duracionCaja={200} />
 							</div>
 					</Sequence>
 

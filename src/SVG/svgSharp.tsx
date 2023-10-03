@@ -13,10 +13,10 @@ export const SvgSharp: React.FC<{
 	stroke: number;
 	seed: number;
 	color: string;
-
+duracionCaja: number;
 	x: number;
 	y: number;
-}> = ({color, ancho, largo, seed, stroke, x, y}) => {
+}> = ({color, ancho, largo, seed, stroke, x, y, duracionCaja}) => {
 	const random1  = Math.trunc(random(seed + 1 ) * 10) - 5 + 10;
 	const random2  = Math.trunc(random(seed + 2 ) * 10) - 5 + 10;
 	const random3  = Math.trunc(random(seed + 3 ) * 10) - 5 + 90;
@@ -48,21 +48,20 @@ export const SvgSharp: React.FC<{
 							Q${random15},80          10,50          Q${random16},20    10,10
 		`;
 
-	let progress = 0;
+		const duracion = duracionCaja / 4;
 
-	if (seed >= 1 && seed <= 15) {
-		progress = interpolate(frame, [0, 50,100,150], [0, 1,1,0]);
-	} else {
-		progress = spring({
-			fps,
+		const progress = interpolate(
 			frame,
-			config: {
-				stiffness: 30,
-			},
-			durationInFrames: 50,
-		});
-	}
+			[0, duracion, duracion * 3, duracionCaja],
+			[0, 1, 1, 2],
+			{
+				extrapolateLeft: 'clamp',
+				extrapolateRight: 'clamp',
+			}
+		);
 
+
+	
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 
 	return (

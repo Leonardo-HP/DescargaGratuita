@@ -7,13 +7,13 @@ import {
 	ScreenshotConsultarFacturas14,
 	ScreenshotConsultarFacturas15,
 } from '../ScreenShots/ScreenShotsConsultarFacturas';
-import { VerdeGobierno } from '../Cortinillas/Colors';
-import { SvgFlecha } from '../SVG/svgFlecha';
+import {VerdeGobierno} from '../Cortinillas/Colors';
+import {SvgFlecha} from '../SVG/svgFlecha';
 
 export const SecuenciaConsultar2 = () => {
 	const frame = useCurrentFrame();
 
-	const y1 = interpolate(frame, [900, 1000], [-730, -1380], {
+	const y1 = interpolate(frame, [970, 1070], [-730, -1380], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -21,7 +21,7 @@ export const SecuenciaConsultar2 = () => {
 
 	const y2 = interpolate(
 		frame,
-		[1400, 1500, 2400, 2500],
+		[1400, 1500, 2400, 2600],
 		[-1725, -600, -600, 35],
 		{
 			easing: Easing.elastic(0.8),
@@ -33,16 +33,14 @@ export const SecuenciaConsultar2 = () => {
 	return (
 		<div>
 			<Sequence durationInFrames={500}>
-		
-					<ScreenshotConsultarFacturas10  />
-		
+				<ScreenshotConsultarFacturas10 />
 			</Sequence>
 
 			<Sequence from={820} durationInFrames={500}>
-					<ScreenshotConsultarFacturas11 />
+				<ScreenshotConsultarFacturas11 />
 			</Sequence>
 
-			<Sequence from={900} durationInFrames={500}>
+			<Sequence from={875} durationInFrames={500}>
 				<div
 					style={{
 						transform: `translateY(${y1}px)`,
@@ -52,7 +50,7 @@ export const SecuenciaConsultar2 = () => {
 				</div>
 			</Sequence>
 
-			<Sequence from={1250} durationInFrames={500}>
+			<Sequence from={1300} durationInFrames={500}>
 				<div
 					style={{
 						transform: `translateY(-1380px)`,
@@ -62,8 +60,9 @@ export const SecuenciaConsultar2 = () => {
 				</div>
 			</Sequence>
 
-			<Sequence from={1300} durationInFrames={1300}>
-			<VerdeGobierno/>
+			<Sequence from={1290} durationInFrames={1300}>
+				<VerdeGobierno />
+
 				<div
 					style={{
 						transform: `translateY(${y2}px)`,
@@ -73,7 +72,7 @@ export const SecuenciaConsultar2 = () => {
 
 					<div
 						style={{
-							transform: `translateX(500px) translateY(2000px) rotate(180deg)`,
+							transform: 'translateY(2200px)translateX(750px) rotate(180deg)',
 						}}
 					>
 						<SvgFlecha
@@ -82,8 +81,10 @@ export const SecuenciaConsultar2 = () => {
 							seed={5}
 							stroke={1}
 							color="red"
+							duracionCaja={300}
 						/>
 					</div>
+					<div />
 				</div>
 			</Sequence>
 
@@ -96,7 +97,6 @@ export const SecuenciaConsultar2 = () => {
 					<ScreenshotConsultarFacturas14 />
 				</div>
 			</Sequence>
-
 
 			<Sequence from={2680} durationInFrames={600}>
 				<div

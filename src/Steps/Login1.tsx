@@ -11,7 +11,8 @@ import {
 	CompCursorLogin4,
 	CompCursorLogin5,
 } from '../CompCursorClick/CompCursor/CompCursorLogin';
-import {RoughNotation} from 'react-rough-notation';
+import { TextoManchaMask } from '../Manchas/TextoManchaMask';
+import { Children } from 'react';
 
 
 export const Login1 = () => {
@@ -97,19 +98,21 @@ export const Login1 = () => {
 				/>
 			</Sequence>
 
-			<Sequence from={50}>
-				<IconBXFTexto2
-					positionX={690}
-					positionY={-140}
-					rotacion={150}
-					duracionCaja={30}
-					size={570}
-					texto="Ingresamos nuestras credenciales."
-					imagenX={-10}
-					imagenY={20}
-					fuenteSize={33}
-					duracionCajaCompleta={100}
-				/>
+			<Sequence from={50} durationInFrames={400}>
+			<div style={{transform: 'translateX(700px) translateY(50px)'}}>
+						<TextoManchaMask
+						duracionCaja={400}
+						altura={500}
+						ancho={500}
+						seed={2}
+						x={15}
+						y={15}
+						fontSize={10}
+						children1='Ingresamos nuestras'
+						children2='credenciales' 
+						children3={undefined}						
+						/>
+					</div>
 			</Sequence>
 
 \

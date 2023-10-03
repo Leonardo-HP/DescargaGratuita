@@ -18,12 +18,12 @@ import {ConsultarFacturasEmitidas3} from './Steps/ConsultarFacturasEmitidas31';
 import {ServiciosDeFactura4} from './Steps/ServiciosDeFactura4';
 import {RecuperarCFDI} from './Recuperar';
 import {CortinillaSalida} from './Cortinillas/CortinillaSalida';
-import { ScreenshotRecuperar } from './ScreenShots/ScreenShotsConsultarFacturas';
+import {ScreenshotRecuperar} from './ScreenShots/ScreenShotsConsultarFacturas';
 
 export const Final = () => {
 	return (
 		<div>
-			<Sequence  durationInFrames={300}>
+			<Sequence durationInFrames={300}>
 				<RojoBF2 />
 			</Sequence>
 
@@ -31,11 +31,11 @@ export const Final = () => {
 				<BlancoFinal />
 			</Sequence>
 
-			<Sequence from={100}  durationInFrames={300}>
-				<CortinaIkea /> 
+			<Sequence from={100} durationInFrames={300}>
+				<CortinaIkea />
 			</Sequence>
 
-			<Sequence from={200}  durationInFrames={600}>
+			<Sequence from={200} durationInFrames={600}>
 				<CompEmoji />
 			</Sequence>
 
@@ -64,35 +64,36 @@ export const Final = () => {
 					<Sequence from={6600} durationInFrames={520}>
 						<ServiciosDeFactura4 />
 					</Sequence>
+				</Sequence>
 
-					<Sequence from={7120} durationInFrames={1000}>
+				<Sequence from={8120} durationInFrames={2100}>
+					<RecuperarCFDI />
+				</Sequence>
 
-						<RecuperarCFDI />
-					</Sequence>
+				<Sequence from={873} durationInFrames={50}>
+					<Blanco2 />
+				</Sequence>
 
-					<Sequence from={873} durationInFrames={50}>
-						<Blanco2 />
-					</Sequence>
+				<Sequence from={1560} durationInFrames={50}>
+					<Blanco2 />
+				</Sequence>
 
-					<Sequence from={1560} durationInFrames={50}>
-						<Blanco2 />
-					</Sequence>
+				<Sequence from={1980} durationInFrames={50}>
+					<Blanco2 />
+				</Sequence>
 
-					<Sequence from={1980} durationInFrames={50}>
-						<Blanco2 />
-					</Sequence>
 
-					<Sequence from={6579} durationInFrames={50}>
-						<Blanco2 />
-					</Sequence>
+				<Sequence from={7580} durationInFrames={50}>
+					<Blanco2 />
+				</Sequence>
 
-					<Sequence from={7100} durationInFrames={50}>
-						<Blanco2 />
-					</Sequence>
+				<Sequence from={8100} durationInFrames={50}>
+					<Blanco2 />
+				</Sequence>
 
-					<Sequence from={8000}>
-						<CortinillaSalida />
-					</Sequence>
+
+				<Sequence from={10000}>
+					<CortinillaSalida />
 				</Sequence>
 				<ComponenteDireccion />
 			</Sequence>

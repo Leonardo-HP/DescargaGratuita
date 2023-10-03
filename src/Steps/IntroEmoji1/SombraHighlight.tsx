@@ -3,7 +3,7 @@ import {Easing, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 export const Sombra = () => {
 	const frame = useCurrentFrame();
 
-	const opacity = interpolate(frame, [0, 50, 51, 100], [0, 0.5, 0.5, 0], {
+	const opacity = interpolate(frame, [0, 50, 200, 250], [0, 0.5, 0.5, 0], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -82,7 +82,7 @@ export const Sombra = () => {
 export const SombraIndividual = () => {
 	const frame = useCurrentFrame();
 
-	const opacity = interpolate(frame, [50, 100, 400, 450], [0, 0.5, 0.5, 0], {
+	const opacity = interpolate(frame, [50, 100, 500, 550], [0, 0.5, 0.5, 0], {
 		easing: Easing.elastic(1),
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',

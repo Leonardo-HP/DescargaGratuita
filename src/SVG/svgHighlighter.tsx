@@ -11,7 +11,8 @@ export const SvgHighlighter: React.FC<{
 	ancho: number;
 	largo: number;
 	seed: number;
-}> = ({ancho, largo,seed}) => {
+	duracionCaja: number
+}> = ({ancho, largo,duracionCaja}) => {
 	const random1 = Math.trunc(random(ancho + 1) * 10) - 5 + 10;
 	
 	const random2 = Math.trunc(random(ancho + 1) * 10) - 5 + 90;
@@ -23,21 +24,18 @@ export const SvgHighlighter: React.FC<{
 		M10,10    Q50,${random1}    ${random2},10  
    
 		`;
-		let progress = 0;
 
-		if (seed >= 1 && seed <= 2) {
-			progress = interpolate(frame, [0, 50], [0, 1]);
-		} else {
-			progress = spring({
-				fps,
-				frame,
-				config: {
-					stiffness: 30,
-				},
-				durationInFrames: 50,
-			});
-		}
+		const duracion = duracionCaja / 4;
 
+		const progress = interpolate(
+			frame,
+			[0, duracion, duracion * 3, duracionCaja],
+			[0, 1, 1, 2],
+			{
+				extrapolateLeft: 'clamp',
+				extrapolateRight: 'clamp',
+			}
+		)
 	const {strokeDasharray, strokeDashoffset} = evolvePath(progress, d);
 
 	return (
