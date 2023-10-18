@@ -113,13 +113,11 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Test"
 				component={MyTest}
-				durationInFrames={500}
+				durationInFrames={600}
 				fps={60}
 				width={1280}
 				height={720}
-				defaultProps={{
-					default: '0',
-				}}
+
 			/>
 
 			<Composition

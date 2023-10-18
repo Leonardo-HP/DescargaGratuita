@@ -10,6 +10,7 @@ import {SvgFlecha} from './SVG/svgFlecha';
 import {CompClick2} from './CompCursorClick/CompClick/CompClick2';
 import {PopIcon} from './highlight.tsx/PopIcon';
 import {ThumbsUp} from './Manchas/ThumbsUp';
+import { Prisma } from './PrismaHighlight';
 
 export const RecuperarCFDI = () => {
 	const frame = useCurrentFrame();
@@ -176,14 +177,18 @@ export const RecuperarCFDI = () => {
 				/>
 			</Sequence>
 
+<Sequence from={1575}>
+<Prisma/>
+</Sequence>
 			<Sequence from={1550}>
-				<div style={{transform: `translateX(${move}px) translateY(200px)`}}>
+	
+				<div style={{transform: `translateX(${move}px) translateY(180px)`}}>
 					<ThumbsUp />
 				</div>
 			</Sequence>
 
 			<Sequence from={1700}>
-				<div style={{transform: 'translateX(400px) translateY(-150px)'}}>
+				<div style={{transform: 'translateX(350px) translateY(-130px)'}}>
 					<PopIcon
 						positionX={-60}
 						positionY={140}
